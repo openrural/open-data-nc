@@ -109,6 +109,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'pagination.middleware.PaginationMiddleware',
+    'django_sorting.middleware.SortingMiddleware',
 )
 
 ROOT_URLCONF = 'opendata.urls'
@@ -136,6 +138,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     # Internal apps
     'catalog',
+    'suggestions',
     # External apps
     'south',
     'compressor',
@@ -143,6 +146,9 @@ INSTALLED_APPS = (
     'haystack',
     'selectable',
     'djcelery',
+    'djangoratings',
+    'pagination',
+    'django_sorting',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -170,10 +176,10 @@ LOGGING = {
         },
     },
     'loggers': {
-        '': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-        },
+        # '': {
+        #     'handlers': ['console'],
+        #     'level': 'DEBUG',
+        # },
         'django.request': {
             'handlers': ['mail_admins'],
             'level': 'ERROR',

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block title %}Request Data{% endblock title %}
+{% block body_id %}request-data{% endblock body_id %}
+{% block body_class %}request-data{% endblock %}
+
+{% block content %}
+<h1>Request Data</h1>
+<form method="post" action=".">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="control-group{% if field.errors %} error{% endif %}">
+        <label class="control-label" for="{{ field.id_for_label }}">
+            {{ field.label }}
+        </label>
+        <div class="controls" id="controls_{{ field.html_name }}">
+            {{ field }}
+            {% if field.errors %}
+            <span class="help-block">{{ field.errors.0|safe }}</span>
+            {% endif %}
+            {% if field.help_text %}
+            <span class="help-block">{{ field.help_text|safe }}</span>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+    <div class="control-group">
+        <input class="btn btn-primary btn-large btn-block" type="submit" value="Submit" />
+    </div>
+</form>
+{% endblock content %}

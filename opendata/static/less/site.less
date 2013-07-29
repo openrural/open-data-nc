@@ -65,7 +65,7 @@
 @import "../flat-ui/less/modules/buttons";
 @import "../flat-ui/less/modules/caret";
 @import "../flat-ui/less/modules/navbar";
-@import "../flat-ui/less/modules/select";
+/*@import "../flat-ui/less/modules/select";*/
 @import "../flat-ui/less/modules/input";
 /*@import "../flat-ui/less/modules/checkbox-and-radio";*/
 /*@import "../flat-ui/less/modules/tagsinput";*/
@@ -103,8 +103,9 @@
 @link-color:       @green-sea;
 @link-hover-color: @turquoise;
 
-@inputWidth: 50%;
-@inputHeight: 21px;
+
+/*@inputHeight: 25px;
+@baseLineHeight: 25px;*/
 
 /* Bootstrap settings
  *
@@ -163,27 +164,6 @@ footer {
     }
 }
 
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input {
-    .row-fluid & {
-        height: 25px;
-    }
-}
-
 /* Individual pages
 ==================== */
 
@@ -211,5 +191,9 @@ body.registration {
         width: 30em;
         margin-left: auto;
         margin-right: auto;
+        input[type='text'],
+        input[type='password'] {
+            width: 80%;
+        }
     }
 }
