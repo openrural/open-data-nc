@@ -203,12 +203,12 @@
       <div id="social_meta">
         <h3 id="avg_rating">Average Rating</h3>
         <div id="detail_rating">
-          <span>{{resource.rating.votes|default:"0"}} Votes</span>
-          <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if rating_average == 1 %}checked{% endif %}/>
-          <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if rating_average == 2 %}checked{% endif %}/>
-          <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if rating_average == 3 %}checked{% endif %}/>
-          <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if rating_average == 4 %}checked{% endif %}/>
-          <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if rating_average == 5 %}checked{% endif %}/>
+          <span>{{resource.rating_votes|default:"0"}} Votes</span>
+          <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 1 %}checked{% endif %}/>
+          <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 2 %}checked{% endif %}/>
+          <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 3 %}checked{% endif %}/>
+          <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 4 %}checked{% endif %}/>
+          <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 5 %}checked{% endif %}/>
         </div>
       </div>
       <div id="comment_form">

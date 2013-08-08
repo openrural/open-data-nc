@@ -1,6 +1,6 @@
 from selectable.base import ModelLookup
 from selectable.registry import registry
-from catalog.models import City
+from catalog.models import City, County
 
 
 class CityLookup(ModelLookup):
@@ -8,4 +8,11 @@ class CityLookup(ModelLookup):
     search_fields = ('name__icontains', )
 
 
+class CountyLookup(ModelLookup):
+    model = County
+    search_fields = ('name__icontains', )
+
+
 registry.register(CityLookup)
+registry.register(CountyLookup)
+

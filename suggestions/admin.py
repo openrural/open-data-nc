@@ -3,7 +3,7 @@ from suggestions.models import Suggestion
 
 
 class SuggestionAdmin(admin.ModelAdmin):
-    pass
+    readonly_fields = ('resources', )
 
 
 admin.site.register(Suggestion, SuggestionAdmin)

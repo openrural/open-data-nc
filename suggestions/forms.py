@@ -1,7 +1,9 @@
 from django import forms
 from django.conf import settings
 
-from catalog.models import City, County
+from catalog.lookups import CityLookup, CountyLookup
+from selectable.forms import AutoCompleteSelectField
+from selectable.forms import AutoCompleteSelectWidget
 from suggestions.models import Suggestion
 
 
@@ -10,14 +12,22 @@ class SearchForm(forms.Form):
 
 
 class SuggestionForm(forms.ModelForm):
-
-    city = forms.ModelChoiceField(required=False, queryset=City.objects.all(),
-                                  widget=forms.Select(attrs={"class": "suggestions-hidden "
-                                                            "suggestions-city"}))
-    county = forms.ModelChoiceField(required=False, queryset=County.objects.all(),
-                                  widget=forms.Select(attrs={"class": "suggestions-hidden "
-                                                        "suggestions-county "
-                                                        "suggestions-city"}))
+    county = AutoCompleteSelectField(
+        lookup_class=CountyLookup,
+        required=False,
+        widget=AutoCompleteSelectWidget(
+            lookup_class=CountyLookup,
+            attrs={"class": "suggestions-hidden suggestions-county suggestions-city"},
+        )
+    )
+    city = AutoCompleteSelectField(
+        lookup_class=CityLookup,
+        required=False,
+        widget=AutoCompleteSelectWidget(
+            lookup_class=CityLookup,
+            attrs={"class": "suggestions-hidden suggestions-city"},
+        )
+    )
 
     class Meta:
         model = Suggestion

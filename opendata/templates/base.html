@@ -11,9 +11,12 @@
     {% block extra-meta %}{% endblock %}
     {% block ga %}{% endblock %}
     {% if debug %}
+    {{ form.media.css }}
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/base/jquery-ui.css" type="text/css">
     <link rel="stylesheet" href="{{ STATIC_URL }}scribbler/css/scribbler.css">
     <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}less/site.less">
     <script src="{{ STATIC_URL }}js/libs/less-1.4.1.min.js"></script>
+
     {% else %}
     {% compress css %}
     <link rel="stylesheet" type="text/less" media="all" href="{{ STATIC_URL }}less/site.less">
@@ -57,11 +60,12 @@
     {% endblock footer %}
 
     {% block js %}
-    <script charset="utf-8" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
     {% compress js %}
     <script charset="utf-8" src="{{ STATIC_URL }}bootstrap/js/bootstrap-collapse.js"></script>
     <script charset="utf-8" src="{{ STATIC_URL }}bootstrap/js/bootstrap-alert.js"></script>
-    {{ form.media }}
+    {{ form.media.js }}
     <script charset="utf-8" src="{{ STATIC_URL }}js/site.js"></script>
     {% endcompress %}
     {% endblock js %}

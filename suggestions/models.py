@@ -14,6 +14,7 @@ HELP = {
     'url': "What is the URL web address of the best version of this data "
            "set available today on a government website? If the data is not "
            "available on any government website, please type 'None'",
+    'other': 'Only needed if none of the categories above was selected.'
 }
 
 
@@ -52,6 +53,8 @@ class Suggestion(models.Model):
     categories = models.ManyToManyField(Category,
                                         related_name="suggestions",
                                         null=True, blank=True)
+    other_category = models.CharField(u'Other category', max_length=255, blank=True,
+                                      help_text=HELP['other'])
     resources = models.ManyToManyField(Resource,
                                        related_name="suggestions",
                                        null=True, blank=True)
