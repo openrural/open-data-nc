@@ -1,6 +1,7 @@
 # Django settings for opendata project.
 import os
 
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 from django.core.urlresolvers import reverse_lazy
 
 PROJECT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
@@ -92,14 +93,8 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.contrib.messages.context_processors.messages',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.media',
+TEMPLATE_CONTEXT_PROCESSORS += (
     'django.core.context_processors.request',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.static',    
 )
 
 MIDDLEWARE_CLASSES = (
@@ -142,6 +137,7 @@ INSTALLED_APPS = (
     # External apps
     'south',
     'compressor',
+    'scribbler',
     'widget_tweaks',
     'haystack',
     'selectable',

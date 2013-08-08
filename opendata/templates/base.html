@@ -10,6 +10,7 @@
     <meta name="keywords" content="{% block meta-keywords %}{% endblock %}">
     {% block extra-meta %}{% endblock %}
     {% if debug %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}scribbler/css/scribbler.css">
     <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}less/site.less">
     <script src="{{ STATIC_URL }}js/libs/less-1.4.1.min.js"></script>
     {% else %}
@@ -19,6 +20,8 @@
     {% endif %}
     {% block extra-css %}{% endblock %}
     <script src="{{ STATIC_URL }}js/libs/modernizr-2.5.3.js"></script>
+
+    <script data-main="{{ STATIC_URL }}scribbler/js/scribbler-min" src="{{ STATIC_URL }}scribbler/libs/require.js"></script>
 </head>
 <body id="{% block body_id %}{% endblock body_id %}" class="{% block body_class %}{% endblock body_class %}">
     {% block masthead %}{% endblock masthead %}
@@ -57,6 +60,7 @@
     {% compress js %}
     <script charset="utf-8" src="{{ STATIC_URL }}bootstrap/js/bootstrap-collapse.js"></script>
     <script charset="utf-8" src="{{ STATIC_URL }}bootstrap/js/bootstrap-alert.js"></script>
+    {{ form.media }}
     <script charset="utf-8" src="{{ STATIC_URL }}js/site.js"></script>
     {% endcompress %}
     {% endblock js %}
