@@ -9,6 +9,7 @@
     <meta name="author" content="{% block meta-author %}{% endblock %}">
     <meta name="keywords" content="{% block meta-keywords %}{% endblock %}">
     {% block extra-meta %}{% endblock %}
+    {% block ga %}{% endblock %}
     {% if debug %}
     <link rel="stylesheet" href="{{ STATIC_URL }}scribbler/css/scribbler.css">
     <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}less/site.less">

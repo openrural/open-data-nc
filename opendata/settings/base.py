@@ -127,6 +127,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
+    'django.contrib.comments',
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.humanize',
@@ -134,6 +135,8 @@ INSTALLED_APPS = (
     # Internal apps
     'catalog',
     'suggestions',
+    'search',
+    'comments',
     # External apps
     'south',
     'compressor',
@@ -146,6 +149,9 @@ INSTALLED_APPS = (
     'pagination',
     'django_sorting',
 )
+
+# Comments app
+COMMENTS_APP = 'comments'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -190,7 +196,7 @@ LOGIN_REDIRECT_URL = reverse_lazy('home')
 SKIP_SOUTH_TESTS = True
 
 COMPRESS_PRECOMPILERS = (
-   ('text/less', 'lessc {infile} {outfile}'),
+    ('text/less', 'lessc {infile} {outfile}'),
 )
 
 # Celery setup

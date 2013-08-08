@@ -7,9 +7,13 @@ from catalog.models import Resource, City, County, Category
 
 HELP = {
     'title': "What is this data set called by the agency that created it?",
-    'description': "Using complete sentences, write a brief paragraph describing the contents of the data set. What key information and fields does it include?"   ,
+    'description': "Using complete sentences, write a brief paragraph "
+                   "describing the contents of the data set. What key "
+                   "information and fields does it include?",
     'relevance': "Why is this data interesting and important?",
-    'url': "What is the URL web address of the best version of this data set available today on a government website? If the data is not available on any government website, please type 'None'",
+    'url': "What is the URL web address of the best version of this data "
+           "set available today on a government website? If the data is not "
+           "available on any government website, please type 'None'",
 }
 
 
