@@ -18,7 +18,6 @@ class LoginRequiredMixin(object):
 
 class ResourceCreate(LoginRequiredMixin, CreateView):
     model = Resource
-    # form_class = ProjectCreateEditForm
 
 
 class ResourceDetail(DetailView):

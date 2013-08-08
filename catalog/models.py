@@ -125,7 +125,8 @@ class Resource(models.Model):
     last_updated = models.DateTimeField(auto_now=True)
     metadata_contact = models.CharField(max_length=255, blank=True)
     metadata_notes = models.TextField(blank=True)
-    coord_sys = models.ManyToManyField(CoordSystem, blank=True, null=True,  verbose_name="Coordinate system")
+    coord_sys = models.ManyToManyField(CoordSystem, blank=True, null=True,
+                                       verbose_name="Coordinate system")
         
     rating = RatingField(range=5, can_change_vote=True)
     
@@ -135,9 +136,9 @@ class Resource(models.Model):
 
     # CSW specific properties 
     wkt_geometry = models.TextField(blank=True)
-    csw_typename = models.CharField(max_length=200,default="csw:Record")
-    csw_schema = models.CharField(max_length=200,default="http://www.opengis.net/cat/csw/2.0.2")
-    csw_mdsource = models.CharField(max_length=100,default="local") 
+    csw_typename = models.CharField(max_length=200, default="csw:Record")
+    csw_schema = models.CharField(max_length=200, default="http://www.opengis.net/cat/csw/2.0.2")
+    csw_mdsource = models.CharField(max_length=100, default="local")
     csw_xml = models.TextField(blank=True)
     csw_anytext = models.TextField(blank=True)
     

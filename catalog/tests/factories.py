@@ -1,15 +1,8 @@
-from django.contrib.auth.models import User
 from django.utils import timezone
 import factory
 
 from catalog.models import City, County, Resource
-
-
-class UserFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = User
-
-    username = factory.Sequence(lambda n: 'user%s' % n)
-    email = factory.LazyAttribute(lambda obj: '%s@example.com' % obj.username)
+from tests.factories import UserFactory
 
 
 class CityFactory(factory.DjangoModelFactory):

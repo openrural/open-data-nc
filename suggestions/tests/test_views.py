@@ -80,7 +80,6 @@ class AddSuggestionViewTest(ViewTestMixin, WebsiteTestBase):
         data = self.get_valid_data()
         self.login_user(UserFactory.create())
         response = self._post(url=self.url, data=data)
-        # import pdb; pdb.set_trace()
         self.assertEquals(response.status_code, 302)
         suggestions = Suggestion.objects.all()
         self.assertEqual(1, suggestions.count())
