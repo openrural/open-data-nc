@@ -52,14 +52,7 @@
 
     <div class="span8 search-results">
         {% for result in page.object_list %}
-        <div class="result">
-            {% with resource=result.object %}
-                <div class="results-header">
-                    <i class="icon-white icon-archive"></i>
-                    <a href="{{ package.get_absolute_url }}">{{ resource }}</a>
-                </div>
-            {% endwith %}
-        </div>
+            {{ result.text|safe }}
         {% if not forloop.last %}<hr />{% endif %}
         {% empty %}
         <p>No results found.</p>
