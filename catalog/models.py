@@ -7,6 +7,7 @@ from django.db import models
 from django.db.models import Q 
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
 from django.template.defaultfilters import slugify
 from django.db.models.signals import post_save
 
@@ -96,6 +97,7 @@ class Resource(models.Model):
 
     # Basic Info
     name = models.CharField(max_length=255)
+    slug = models.SlugField()
     short_description = models.CharField(max_length=255)    
     release_date = models.DateField(blank=True, null=True)
     time_period = models.CharField(max_length=50, blank=True)
@@ -165,8 +167,8 @@ class Resource(models.Model):
         return images
     
     def get_absolute_url(self):
-        slug = slugify(self.name)
-        return "/opendata/resource/%i/%s" % (self.id, slug)
+        return reverse('catalog_resource_detail', kwargs={'pk': self.id, 'slug':
+            self.slug})
 
     def __unicode__(self):
         return '%s' % self.name
@@ -270,6 +272,12 @@ class Resource(models.Model):
     def gen_csw_anytext(self):
         xml = etree.fromstring(self.csw_xml)
         return ' '.join([value.strip() for value in xml.xpath('//text()')])
+
+    def save(self, *args, **kwargs):
+        """Sets slug for resource."""
+        if not self.id:
+            self.slug = slugify(self.name)
+        super(Resource, self).save(*args, **kwargs)
 
 
 class Url(models.Model):

@@ -1,11 +1,12 @@
 {% extends "base.html" %}
-{% load ratings widget_tweaks sorting_tags pagination_tags %}
+{% load ratings widget_tweaks sorting_tags pagination_tags scribbler_tags %}
 
 {% block title %}Request Public Data{% endblock %}
 {% block body_id %}suggestions-list{% endblock body_id %}
 {% block body_class %}suggestions{% endblock body_class %}
 
 {% block content %}
+    {% scribble "request-data" %}
     <h1>Request Public Data</h1>
 
     <p>Is there a public data set that a state, county, city or other government agency has created but that isn't publicly available online? Tell us about it here and we'll try to collect it and add it to the Open N.C. catalog for the public's use.</p>
@@ -17,7 +18,7 @@
     <p>
         <a href="{% url 'suggestion-create' %}" class="btn btn-primary btn-large btn-block">Request Data</a>
     </p>
-
+    {% endscribble %}
     <h2>Current Requests</h2>
     <div class="search">
         <form method='GET' action='.'>

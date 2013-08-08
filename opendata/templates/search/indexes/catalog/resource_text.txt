@@ -1,1 +1,6 @@
-{{ object.name }}
+<div class="result">
+    <div class="results-header">
+        <i class="icon-white icon-archive"></i>
+        <a href="{{ object.get_absolute_url }}">{{ object }}</a>
+    </div>
+</div>

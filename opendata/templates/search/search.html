@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load widget_tweaks %}
+{% load widget_tweaks facet_tags %}
 
 {% block title %}{{ model_type|default:"search result"|add:"s"|title }}{% endblock title %}
 {% block body_id %}search{% endblock body_id %}
@@ -25,7 +25,15 @@
         <div class="search-tools">
             <h3>Data Catalog</h3>
             <div id="reset-filters">
+                <br>
+                {% if filters %}
+                <strong>Active Filters: </strong><br>
+                {% for facet, value in filters %}
+                    <a class="facet_removal" href="{% remove_facet request value %}"><i class="icon-remove-sign"></i></a> {{ facet }}: {{ value }}<br />
+                {% endfor %}
+                <br>
                 <a href="{{ request.path }}{% if query %}?q={{ query }}{% endif %}">Reset Filters</a>
+                {% endif %}
             </div>
             <form class="form-search" method="get" action=".">
                 <div class="control-group">
@@ -52,14 +60,7 @@
 
     <div class="span8 search-results">
         {% for result in page.object_list %}
-        <div class="result">
-            {% with resource=result.object %}
-                <div class="results-header">
-                    <i class="icon-white icon-archive"></i>
-                    <a href="{{ package.get_absolute_url }}">{{ resource }}</a>
-                </div>
-            {% endwith %}
-        </div>
+            {{ result.text|safe }}
         {% if not forloop.last %}<hr />{% endif %}
         {% empty %}
         <p>No results found.</p>

@@ -9,10 +9,9 @@ from catalog.models import City, County
 class Command(BaseCommand):
     """Import city/county CSV file into database."""
 
-    def handle(self, url, **options):
-        response = requests.get(url)
-        content = StringIO.StringIO(response.content)
-        reader = csv.reader(content, delimiter=',')
+    def handle(self, file_location, **options):
+        file_ = file(file_location, 'r')
+        reader = csv.reader(file_, delimiter=',')
         for city_name, county_name in reader:
             city, _ = City.objects.get_or_create(name=city_name)
             county, _ = County.objects.get_or_create(name=county_name)

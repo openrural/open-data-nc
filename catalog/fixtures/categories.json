@@ -1,0 +1,128 @@
+[
+{
+    "pk": 1, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Arts/Culture/History"
+    }
+},
+{
+    "pk": 2, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Business and economy"
+    }
+},
+{
+    "pk": 3, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Government spending and taxes"
+    }
+},
+{
+    "pk": 4, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Communications"
+    }
+},
+{
+    "pk": 5, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Courts and prisons"
+    }
+},
+{
+    "pk": 6, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Crime, fire and public safety"
+    }
+},
+{
+    "pk": 7, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Education"
+    }
+},
+{
+    "pk": 8, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Energy and utilities"
+    }
+},
+{
+    "pk": 9, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Elections, voting and lobbying"
+    }
+},
+{
+    "pk": 10, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Environment and natural resources"
+    }
+},
+{
+    "pk": 11, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Health"
+    }
+},
+{
+    "pk": 12, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Jobs, employment and occupations"
+    }
+},
+{
+    "pk": 13, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Parks and recreation"
+    }
+},
+{
+    "pk": 14, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Permits"
+    }
+},
+{
+    "pk": 15, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Planning and zoning"
+    }
+},
+{
+    "pk": 16, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Property/real estate"
+    }
+},
+{
+    "pk": 17, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Social services"
+    }
+},
+{
+    "pk": 18, 
+    "model": "catalog.category", 
+    "fields": {
+        "name": "Transportation and motor vehicles"
+    }
+}
+]
