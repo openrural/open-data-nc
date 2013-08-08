@@ -1,5 +1,4 @@
 from django.forms.util import flatatt
-
 from django.utils.encoding import StrAndUnicode, force_unicode
 from django.utils.safestring import mark_safe
 
@@ -18,7 +17,7 @@ class StarsRadioInput(StrAndUnicode):
         self.index = index
 
     def __unicode__(self):
-       return mark_safe(u'%s' % self.tag())
+        return mark_safe(u'%s' % self.tag())
 
     def is_checked(self):
         return self.value == self.choice_value
@@ -26,7 +25,8 @@ class StarsRadioInput(StrAndUnicode):
     def tag(self):
         if 'id' in self.attrs:
             self.attrs['id'] = '%s_%s' % (self.attrs['id'], self.index)
-        final_attrs = dict(self.attrs, type='radio', name=self.name, value=self.choice_value)
+        final_attrs = dict(self.attrs, type='radio', name=self.name,
+                           value=self.choice_value)
         if self.is_checked():
             final_attrs['checked'] = 'checked'
         return mark_safe(u'<input%s />' % flatatt(final_attrs))
@@ -39,11 +39,13 @@ class StarsRadioFieldRenderer(StrAndUnicode):
 
     def __iter__(self):
         for i, choice in enumerate(self.choices):
-            yield StarsRadioInput(self.name, self.value, self.attrs.copy(), choice, i)
+            yield StarsRadioInput(self.name, self.value, self.attrs.copy(),
+                                  choice, i)
 
     def __getitem__(self, idx):
         choice = self.choices[idx] # Let the IndexError propogate
-        return StarsRadioInput(self.name, self.value, self.attrs.copy(), choice, idx)
+        return StarsRadioInput(self.name, self.value, self.attrs.copy(), choice,
+                               idx)
 
     def __unicode__(self):
         return self.render()
