@@ -133,10 +133,11 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'django.contrib.sitemaps',
     # Internal apps
-    'catalog',
-    'suggestions',
-    'search',
-    'comments',
+    'opendata.catalog',
+    'opendata.requests',
+    'opendata.search',
+    'opendata.comments',
+    'opendata.suggestions',
     # External apps
     'south',
     'compressor',
@@ -151,7 +152,7 @@ INSTALLED_APPS = (
 )
 
 # Comments app
-COMMENTS_APP = 'comments'
+COMMENTS_APP = 'opendata.comments'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -210,6 +211,6 @@ HAYSTACK_CONNECTIONS = {
         'URL': 'http://127.0.0.1:8983/solr'
     },
 }
-HAYSTACK_SIGNAL_PROCESSOR = 'search.index_processors.M2MRealtimeSignalProcessor'
+HAYSTACK_SIGNAL_PROCESSOR = 'opendata.search.index_processors.M2MRealtimeSignalProcessor'
 
 ACCOUNT_ACTIVATION_DAYS = 7

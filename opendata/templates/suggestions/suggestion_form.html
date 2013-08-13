@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load widget_tweaks comments %}
+
+{% block title %}{{ object|title }}{% endblock title %}
+{% block body_id %}resource-detail{% endblock body_id %}
+{% block body_class %}catalog{% endblock body_class %}
+
+{% block extra-meta %}
+<meta property="og:title" content="{{ object }}"/>
+<meta property="og:url" content="{{ site_url }}{{ object.get_absolute_url }}"/>
+<meta property="og:image" content=""/>
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Open Data NC"/>
+{% endblock %}
+
+{% block extra-css %}
+    <link rel="stylesheet" type="text/less" media="all" href="{{ STATIC_URL }}rating/jquery.rating.css">
+{% endblock %}
+
+{% block content %}
+    <h2>Suggest Data</h2>
+    <form action="{% url 'suggest-create' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p><input type="submit" value="Submit" class="btn"/></p>
+    </form>
+{% endblock %}

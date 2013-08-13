@@ -18,4 +18,4 @@ before_script:
  - python manage.py syncdb --migrate --noinput
 
 script:
- - python manage.py test suggestions catalog
+ - python manage.py test requests catalog suggestions

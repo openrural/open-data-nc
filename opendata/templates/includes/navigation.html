@@ -15,7 +15,8 @@
                 <ul class="nav">
                     <li><a href="#">About</a></li>
                     <li><a href="{% url 'catalog_search' %}">Data Catalog</a></li>
-                    <li><a href="{% url 'suggestion-list' %}">Request Data</a></li>
+                    <li><a href="{% url 'request-list' %}">Request Data</a></li>
+                    <li><a href="{% url 'suggest-page' %}">Suggest Data</a></li>
                 {% if not user.is_authenticated %}
                     <li><a href="{% url "auth_login" %}">Register/Log In</a></li>
                 {% else %}
