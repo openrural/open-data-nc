@@ -1,7 +1,7 @@
 from django.utils import timezone
 import factory
 
-from ..models import City, County, Resource
+from ..models import City, County, Department, Resource
 from opendata.tests.factories import UserFactory
 
 
@@ -17,6 +17,13 @@ class CountyFactory(factory.DjangoModelFactory):
     name = factory.Sequence(lambda n: 'city%s' % n)
 
 
+class DepartmentFactory(factory.DjangoModelFactory):
+    FACTORY_FOR = Department
+
+    name = "Departement"
+    type = 'state'
+
+
 class ResourceFactory(factory.DjangoModelFactory):
     FACTORY_FOR = Resource
 
@@ -27,4 +34,4 @@ class ResourceFactory(factory.DjangoModelFactory):
     description = "Long description"
     short_description = "Short description"
     usage = "Usage"
-    organization = "Organization"
+    department = factory.SubFactory(DepartmentFactory)

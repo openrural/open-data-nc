@@ -37,7 +37,7 @@ def staging():
 @task
 def production():
     env.environment = 'production'
-    env.hosts = ["open-nc.org"] # FIXME: Add production hosts
+    env.hosts = ['open-nc.org', ]  # FIXME: Add production hosts
     env.branch = 'master'
     setup_path()
 

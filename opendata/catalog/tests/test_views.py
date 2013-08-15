@@ -1,6 +1,6 @@
 from django.core.urlresolvers import reverse
 
-from .factories import ResourceFactory
+from .factories import ResourceFactory, DepartmentFactory
 from ..models import Resource
 from opendata.tests.base import ViewTestMixin, WebsiteTestBase, BasicGetTest
 from opendata.tests.factories import UserFactory
@@ -25,7 +25,8 @@ class ResourceCreateTest(ViewTestMixin, WebsiteTestBase):
             "created_by": self.user.id,
             "csw_typename": "csw:Record",
             "short_description": "resource",
-            "organization": "Police",
+            "department": DepartmentFactory.create().id,
+            'agency_type': 'state',
             "slug": "this-field-required",
             "csw_schema": "http://www.opengis.net/cat/csw/2.0.2",
             "csw_mdsource": "local",
@@ -51,6 +52,7 @@ class ResourceCreateTest(ViewTestMixin, WebsiteTestBase):
     def test_post_authenticated(self):
         self.login_user(UserFactory.create())
         response = self._post(url=self.url, data=self.data)
+        # import pdb; pdb.set_trace()
         self.assertEquals(response.status_code, 302)
         suggestions = Resource.objects.all()
         self.assertEqual(1, suggestions.count())

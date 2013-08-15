@@ -1,0 +1,2494 @@
+[
+{
+    "pk": 1, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of State Budget and Management"
+    }
+},
+{
+    "pk": 2, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Information Technology"
+    }
+},
+{
+    "pk": 3, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of State Personnel"
+    }
+},
+{
+    "pk": 4, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Corporations Division"
+    }
+},
+{
+    "pk": 5, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Charitable Solicitation Licensing Section"
+    }
+},
+{
+    "pk": 6, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Lobbying Compliance Division"
+    }
+},
+{
+    "pk": 7, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Notary Public Section"
+    }
+},
+{
+    "pk": 8, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Securities Division"
+    }
+},
+{
+    "pk": 9, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Uniform Commercial Code Section"
+    }
+},
+{
+    "pk": 10, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Athlete Agent Registration Office"
+    }
+},
+{
+    "pk": 11, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Authentication Office"
+    }
+},
+{
+    "pk": 12, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of International Services"
+    }
+},
+{
+    "pk": 13, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Land Records Management Section"
+    }
+},
+{
+    "pk": 14, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Publications Division"
+    }
+},
+{
+    "pk": 15, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Trademarks Section"
+    }
+},
+{
+    "pk": 16, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Certification and Filing Division"
+    }
+},
+{
+    "pk": 17, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Information Technology Division"
+    }
+},
+{
+    "pk": 18, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Audits"
+    }
+},
+{
+    "pk": 19, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Management Information Systems"
+    }
+},
+{
+    "pk": 20, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Information Systems Audit"
+    }
+},
+{
+    "pk": 21, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Investigative Division"
+    }
+},
+{
+    "pk": 22, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Financial Operations"
+    }
+},
+{
+    "pk": 23, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Investment Management"
+    }
+},
+{
+    "pk": 24, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Retirement Systems"
+    }
+},
+{
+    "pk": 25, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "State and Local Government Finance Division"
+    }
+},
+{
+    "pk": 26, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "State Health Plan for Teachers and State Employees"
+    }
+},
+{
+    "pk": 27, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Unclaimed Property and Escheats Division"
+    }
+},
+{
+    "pk": 28, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Attorney General\u2019s Office"
+    }
+},
+{
+    "pk": 29, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Legal Services Division"
+    }
+},
+{
+    "pk": 30, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "State Bureau of Investigation"
+    }
+},
+{
+    "pk": 31, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Sheriffs Training & Standards"
+    }
+},
+{
+    "pk": 32, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Criminal Justice Training & Standards"
+    }
+},
+{
+    "pk": 33, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "NC Justice Academy"
+    }
+},
+{
+    "pk": 34, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Private Protective Services"
+    }
+},
+{
+    "pk": 35, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Alarm Systems Licensing"
+    }
+},
+{
+    "pk": 36, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Medicaid Fraud Investigations Unit"
+    }
+},
+{
+    "pk": 37, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Financial Services"
+    }
+},
+{
+    "pk": 38, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Human Resources"
+    }
+},
+{
+    "pk": 39, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Administrative Division"
+    }
+},
+{
+    "pk": 40, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Criminal Division"
+    }
+},
+{
+    "pk": 41, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Consumer Protection"
+    }
+},
+{
+    "pk": 42, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Civil Division"
+    }
+},
+{
+    "pk": 43, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Environmental Division"
+    }
+},
+{
+    "pk": 44, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Law Enforcement and Prosecutions Division"
+    }
+},
+{
+    "pk": 45, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Special Litigation DIvision"
+    }
+},
+{
+    "pk": 46, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Center for Advancement of Teaching"
+    }
+},
+{
+    "pk": 47, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "N.C. Virtual Public School"
+    }
+},
+{
+    "pk": 48, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Communication and Information Division"
+    }
+},
+{
+    "pk": 49, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Data, Research and Federal Policy Division"
+    }
+},
+{
+    "pk": 50, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Race to the Top"
+    }
+},
+{
+    "pk": 51, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Academic Services and Instructional Support"
+    }
+},
+{
+    "pk": 52, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Accountability Services"
+    }
+},
+{
+    "pk": 53, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Career and Technical Education"
+    }
+},
+{
+    "pk": 54, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of Charter Schools"
+    }
+},
+{
+    "pk": 55, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "District and School Transformation Division"
+    }
+},
+{
+    "pk": 56, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Educator Effectiveness Division"
+    }
+},
+{
+    "pk": 57, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Exceptional Children Division"
+    }
+},
+{
+    "pk": 58, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Federal Program Monitoring and Support Services Division"
+    }
+},
+{
+    "pk": 59, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Financial and Business Services"
+    }
+},
+{
+    "pk": 60, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Healthy Schools"
+    }
+},
+{
+    "pk": 61, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Digital Teaching and Learning"
+    }
+},
+{
+    "pk": 62, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Internal Audit"
+    }
+},
+{
+    "pk": 63, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "IT Program Management Office"
+    }
+},
+{
+    "pk": 64, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Agricultural Statistics"
+    }
+},
+{
+    "pk": 65, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Agronomic Services"
+    }
+},
+{
+    "pk": 66, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Budget & Finance"
+    }
+},
+{
+    "pk": 67, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Emergency Programs"
+    }
+},
+{
+    "pk": 68, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Environmental Programs"
+    }
+},
+{
+    "pk": 69, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Food Distribution"
+    }
+},
+{
+    "pk": 70, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Food and Drug Protection"
+    }
+},
+{
+    "pk": 71, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Human Resources Office"
+    }
+},
+{
+    "pk": 72, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Marketing"
+    }
+},
+{
+    "pk": 73, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Meat and Poultry Inspection"
+    }
+},
+{
+    "pk": 74, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Forest Service"
+    }
+},
+{
+    "pk": 75, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "State Fair"
+    }
+},
+{
+    "pk": 76, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Plant Industry"
+    }
+},
+{
+    "pk": 77, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Property and Construction"
+    }
+},
+{
+    "pk": 78, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Public Affairs"
+    }
+},
+{
+    "pk": 79, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Research Stations"
+    }
+},
+{
+    "pk": 80, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Small Farms"
+    }
+},
+{
+    "pk": 81, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Soil and Water Conservation"
+    }
+},
+{
+    "pk": 82, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Standards"
+    }
+},
+{
+    "pk": 83, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Structural Pest Control And Pesticides Division"
+    }
+},
+{
+    "pk": 84, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Veterinary Division"
+    }
+},
+{
+    "pk": 85, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of the State Fire Marshall"
+    }
+},
+{
+    "pk": 86, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Consumer Services Division"
+    }
+},
+{
+    "pk": 87, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Health Insurance Smart NC"
+    }
+},
+{
+    "pk": 88, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Seniors' Health Insurance Information Program (SHIIP/Medicare)"
+    }
+},
+{
+    "pk": 89, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Criminal Investigations"
+    }
+},
+{
+    "pk": 90, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Agent Services"
+    }
+},
+{
+    "pk": 91, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Property and Casualty"
+    }
+},
+{
+    "pk": 92, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Life and Health"
+    }
+},
+{
+    "pk": 93, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Market Regulation Division"
+    }
+},
+{
+    "pk": 94, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Financial Evaluation Division"
+    }
+},
+{
+    "pk": 95, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Regulatory Actions Division"
+    }
+},
+{
+    "pk": 96, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Actuarial Services Division"
+    }
+},
+{
+    "pk": 97, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Legislative Services Office"
+    }
+},
+{
+    "pk": 98, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Engineering and Codes Division"
+    }
+},
+{
+    "pk": 99, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Risk Management Division"
+    }
+},
+{
+    "pk": 100, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Manufactured Building Division"
+    }
+},
+{
+    "pk": 101, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Fire and Rescue Commission"
+    }
+},
+{
+    "pk": 102, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Fire and Rescue Training"
+    }
+},
+{
+    "pk": 103, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Safe Kids North Carolina"
+    }
+},
+{
+    "pk": 104, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Ratings and Inspections Division"
+    }
+},
+{
+    "pk": 105, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Research and Program Development Division"
+    }
+},
+{
+    "pk": 106, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Occupational Safety and Health Division"
+    }
+},
+{
+    "pk": 107, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Communications Division"
+    }
+},
+{
+    "pk": 108, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Individual Development Accounts (IDA) Program"
+    }
+},
+{
+    "pk": 109, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Legal Affairs Division"
+    }
+},
+{
+    "pk": 110, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Research and Policy Division"
+    }
+},
+{
+    "pk": 111, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "N.C. Department of Labor Library"
+    }
+},
+{
+    "pk": 112, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Apprenticeship and Training Bureau"
+    }
+},
+{
+    "pk": 113, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Boiler Safety Bureau"
+    }
+},
+{
+    "pk": 114, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Elevator and Amusement Device standards and inspections"
+    }
+},
+{
+    "pk": 115, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Employment Discrimination Bureau"
+    }
+},
+{
+    "pk": 116, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Mine and Quarry Bureau"
+    }
+},
+{
+    "pk": 117, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Wage and Hour Bureau"
+    }
+},
+{
+    "pk": 118, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of the Secretary"
+    }
+},
+{
+    "pk": 119, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Surplus Property"
+    }
+},
+{
+    "pk": 120, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Purchase and Contract Division"
+    }
+},
+{
+    "pk": 121, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office for Historically Underutilitized Businesses"
+    }
+},
+{
+    "pk": 122, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Commission of Indian Affairs"
+    }
+},
+{
+    "pk": 123, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Council for Women"
+    }
+},
+{
+    "pk": 124, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Youth Advocacy and Involvement Office"
+    }
+},
+{
+    "pk": 125, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Non-Public Education"
+    }
+},
+{
+    "pk": 126, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "State Parking"
+    }
+},
+{
+    "pk": 127, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "State Property Office"
+    }
+},
+{
+    "pk": 128, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "State Construction Office"
+    }
+},
+{
+    "pk": 129, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Human Relations Commission"
+    }
+},
+{
+    "pk": 130, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Veterans Affairs"
+    }
+},
+{
+    "pk": 131, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Motor Fleet Management"
+    }
+},
+{
+    "pk": 132, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Justice for Sterlization Victims Foundation"
+    }
+},
+{
+    "pk": 133, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Facility Management"
+    }
+},
+{
+    "pk": 134, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Mail Service Center"
+    }
+},
+{
+    "pk": 135, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of Fiscal Management"
+    }
+},
+{
+    "pk": 136, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "License to Give Trust Fund"
+    }
+},
+{
+    "pk": 137, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Fiscal Management Division"
+    }
+},
+{
+    "pk": 138, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Employment Security"
+    }
+},
+{
+    "pk": 139, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Business and Industry Division"
+    }
+},
+{
+    "pk": 140, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Community Assistance"
+    }
+},
+{
+    "pk": 141, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Energy Division"
+    }
+},
+{
+    "pk": 142, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "N.C. Film Office/Film Council"
+    }
+},
+{
+    "pk": 143, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "International Trade Division"
+    }
+},
+{
+    "pk": 144, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Labor and Economic Analysis Division"
+    }
+},
+{
+    "pk": 145, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of Science & Technology"
+    }
+},
+{
+    "pk": 146, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Tourism, Film, and Sports Development "
+    }
+},
+{
+    "pk": 147, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Workforce Solutions"
+    }
+},
+{
+    "pk": 148, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Board of Science & Technology"
+    }
+},
+{
+    "pk": 149, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": " Commission on Workforce Development"
+    }
+},
+{
+    "pk": 150, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Economic Development Board"
+    }
+},
+{
+    "pk": 151, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Alcoholic Beverage Control Commission"
+    }
+},
+{
+    "pk": 152, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Banking Commission"
+    }
+},
+{
+    "pk": 153, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Community Development Council"
+    }
+},
+{
+    "pk": 154, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Credit Union Division"
+    }
+},
+{
+    "pk": 155, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Energy Policy Council"
+    }
+},
+{
+    "pk": 156, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Industrial Commission"
+    }
+},
+{
+    "pk": 157, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Utilities Commission"
+    }
+},
+{
+    "pk": 158, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Rural Electrification Authority"
+    }
+},
+{
+    "pk": 159, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Travel and Tourism Board"
+    }
+},
+{
+    "pk": 160, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of the Commissioner for Small Business"
+    }
+},
+{
+    "pk": 161, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "NC Rural Development Council"
+    }
+},
+{
+    "pk": 162, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Commerce Finance Center"
+    }
+},
+{
+    "pk": 163, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Marketing and Customer Services Division"
+    }
+},
+{
+    "pk": 164, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Policy, Research and Strategic Planning Division"
+    }
+},
+{
+    "pk": 165, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Cemetary Commission"
+    }
+},
+{
+    "pk": 166, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "State Ports Authority"
+    }
+},
+{
+    "pk": 167, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Archives and Records"
+    }
+},
+{
+    "pk": 168, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of State History Museums"
+    }
+},
+{
+    "pk": 169, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of State Historic Sites"
+    }
+},
+{
+    "pk": 170, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Historical Resources"
+    }
+},
+{
+    "pk": 171, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "N.C. Museum of Art"
+    }
+},
+{
+    "pk": 172, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "N.C. Arts Council"
+    }
+},
+{
+    "pk": 173, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Southeastern Center for Contemporary Art"
+    }
+},
+{
+    "pk": 174, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "N.C. Symphony"
+    }
+},
+{
+    "pk": 175, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "State Library of North Carolina"
+    }
+},
+{
+    "pk": 176, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of State Archeology"
+    }
+},
+{
+    "pk": 177, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Historic Preservation Office"
+    }
+},
+{
+    "pk": 178, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Historical Publications"
+    }
+},
+{
+    "pk": 179, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "N.C. Maritime Museums"
+    }
+},
+{
+    "pk": 180, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Library for the Blind and Physically Handicapped"
+    }
+},
+{
+    "pk": 181, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "General Counsel"
+    }
+},
+{
+    "pk": 182, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Ombudsman"
+    }
+},
+{
+    "pk": 183, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Water Infrastructure"
+    }
+},
+{
+    "pk": 184, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Information Technology Services"
+    }
+},
+{
+    "pk": 185, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Budget & Planning"
+    }
+},
+{
+    "pk": 186, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Controller"
+    }
+},
+{
+    "pk": 187, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Purchase and Contracts"
+    }
+},
+{
+    "pk": 188, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Property Management"
+    }
+},
+{
+    "pk": 189, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Air Quality"
+    }
+},
+{
+    "pk": 190, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "N.C. Aquariums"
+    }
+},
+{
+    "pk": 191, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of Conservation, Planning and Community Affairs"
+    }
+},
+{
+    "pk": 192, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Environmental Assistance Center"
+    }
+},
+{
+    "pk": 193, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of Environmental Education and Public Affairs"
+    }
+},
+{
+    "pk": 194, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Energy, Mineral and Land Resources"
+    }
+},
+{
+    "pk": 195, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Legislative and Intergovernmental Affairs office"
+    }
+},
+{
+    "pk": 196, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Marine Fisheries"
+    }
+},
+{
+    "pk": 197, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Museum of Natural Sciences"
+    }
+},
+{
+    "pk": 198, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Parks and Recreation"
+    }
+},
+{
+    "pk": 199, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Waste Management"
+    }
+},
+{
+    "pk": 200, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Water Resources (including Division of Water Quality)"
+    }
+},
+{
+    "pk": 201, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "N.C. Zoo"
+    }
+},
+{
+    "pk": 202, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Financial Services Division"
+    }
+},
+{
+    "pk": 203, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Albemarle-Pamlico National Estuary Partnership"
+    }
+},
+{
+    "pk": 204, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Clean Water Management Trust Fund"
+    }
+},
+{
+    "pk": 205, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Coastal Management"
+    }
+},
+{
+    "pk": 206, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Environmental Management Commission"
+    }
+},
+{
+    "pk": 207, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Mining and Energy Commission"
+    }
+},
+{
+    "pk": 208, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Natural Heritage Trust Fund"
+    }
+},
+{
+    "pk": 209, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Ecosystem Enhancement Program"
+    }
+},
+{
+    "pk": 210, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Wildlife Resources Commission"
+    }
+},
+{
+    "pk": 211, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Aging and Adult Services"
+    }
+},
+{
+    "pk": 212, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Services for the Blind"
+    }
+},
+{
+    "pk": 213, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Child Development and Early Education"
+    }
+},
+{
+    "pk": 214, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Services for the Deaf and Hard of Hearing"
+    }
+},
+{
+    "pk": 215, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Council on Developmental Disabilities"
+    }
+},
+{
+    "pk": 216, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of Economic Opportunity"
+    }
+},
+{
+    "pk": 217, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Education Services"
+    }
+},
+{
+    "pk": 218, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Public Health (including vital records and environmental health)"
+    }
+},
+{
+    "pk": 219, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Health Service Regulation"
+    }
+},
+{
+    "pk": 220, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Medical Assistance"
+    }
+},
+{
+    "pk": 221, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Mental Health, Developmental Disabilities, and Substance Abuse Services"
+    }
+},
+{
+    "pk": 222, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of Rural Health and Community Care"
+    }
+},
+{
+    "pk": 223, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Social Services"
+    }
+},
+{
+    "pk": 224, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "State Center for Health Statistics"
+    }
+},
+{
+    "pk": 225, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of State Operated Healthcare Facilities"
+    }
+},
+{
+    "pk": 226, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Budget and Analysis"
+    }
+},
+{
+    "pk": 227, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of the Controller"
+    }
+},
+{
+    "pk": 228, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Human Resources"
+    }
+},
+{
+    "pk": 229, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Intergovernmental Relations"
+    }
+},
+{
+    "pk": 230, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Information Resource Management"
+    }
+},
+{
+    "pk": 231, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of Medicaid Management Information System Services"
+    }
+},
+{
+    "pk": 232, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of Privacy and Security"
+    }
+},
+{
+    "pk": 233, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of Procurement and Contract Services"
+    }
+},
+{
+    "pk": 234, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of Public Affairs"
+    }
+},
+{
+    "pk": 235, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Adult Correction"
+    }
+},
+{
+    "pk": 236, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Alcoholism and Chemical Dependency Programs"
+    }
+},
+{
+    "pk": 237, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "North Carolina Correction Enterprises\n"
+    }
+},
+{
+    "pk": 238, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "\nCommunity Corrections\n"
+    }
+},
+{
+    "pk": 239, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "North Carolina Inmate Grievance Resolution Board"
+    }
+},
+{
+    "pk": 240, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Post Release Supervision and Parole Commission"
+    }
+},
+{
+    "pk": 241, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Prisons"
+    }
+},
+{
+    "pk": 242, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Juvenile Justice"
+    }
+},
+{
+    "pk": 243, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Law Enforcement"
+    }
+},
+{
+    "pk": 244, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Emergency Management"
+    }
+},
+{
+    "pk": 245, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Boxing Authority"
+    }
+},
+{
+    "pk": 246, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Civil Air Patrol"
+    }
+},
+{
+    "pk": 247, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "National Guard"
+    }
+},
+{
+    "pk": 248, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Butner Public Safety"
+    }
+},
+{
+    "pk": 249, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "State Capitol Police"
+    }
+},
+{
+    "pk": 250, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "State Highway Patrol"
+    }
+},
+{
+    "pk": 251, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Governor's Crime Commission"
+    }
+},
+{
+    "pk": 252, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Victim's Services"
+    }
+},
+{
+    "pk": 253, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Internal Audit Division"
+    }
+},
+{
+    "pk": 254, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Business Operations Division"
+    }
+},
+{
+    "pk": 255, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Collection Division"
+    }
+},
+{
+    "pk": 256, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Examinations Division"
+    }
+},
+{
+    "pk": 257, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Special Corporate Compliance Initiatives Division"
+    }
+},
+{
+    "pk": 258, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Tax Enforcement Division"
+    }
+},
+{
+    "pk": 259, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Excise Tax Division"
+    }
+},
+{
+    "pk": 260, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Income Tax Division"
+    }
+},
+{
+    "pk": 261, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Local Government Division"
+    }
+},
+{
+    "pk": 262, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Sales and Use Tax Division"
+    }
+},
+{
+    "pk": 263, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Taxpayer Assistance"
+    }
+},
+{
+    "pk": 264, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Applications Development and Support Division"
+    }
+},
+{
+    "pk": 265, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Business Support Services Division"
+    }
+},
+{
+    "pk": 266, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Contract Administration"
+    }
+},
+{
+    "pk": 267, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Enterprise Project Management Division"
+    }
+},
+{
+    "pk": 268, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Information Security Division"
+    }
+},
+{
+    "pk": 269, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Technology Services and Support"
+    }
+},
+{
+    "pk": 270, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Documents and Payments Processing Division"
+    }
+},
+{
+    "pk": 271, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Human Resources Division"
+    }
+},
+{
+    "pk": 272, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Business Solutions Division"
+    }
+},
+{
+    "pk": 273, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Motor Vehicles"
+    }
+},
+{
+    "pk": 274, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Facilities Management"
+    }
+},
+{
+    "pk": 275, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Support Services"
+    }
+},
+{
+    "pk": 276, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Highways"
+    }
+},
+{
+    "pk": 277, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Prioritization Office"
+    }
+},
+{
+    "pk": 278, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Program Development Branch"
+    }
+},
+{
+    "pk": 279, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Technical Services"
+    }
+},
+{
+    "pk": 280, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Rail Division"
+    }
+},
+{
+    "pk": 281, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Division of Aviation"
+    }
+},
+{
+    "pk": 282, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Ferry Division"
+    }
+},
+{
+    "pk": 283, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Public Transportation Division"
+    }
+},
+{
+    "pk": 284, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Bicycle and Pedestrian Division"
+    }
+},
+{
+    "pk": 285, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Turnpike Authority"
+    }
+},
+{
+    "pk": 286, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Financial Management Division"
+    }
+},
+{
+    "pk": 287, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Intergovernmental Affairs and Budget Coordination"
+    }
+},
+{
+    "pk": 288, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Strategic Planning"
+    }
+},
+{
+    "pk": 289, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Attorney General's Office"
+    }
+},
+{
+    "pk": 290, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Communications Office"
+    }
+},
+{
+    "pk": 291, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Governance Office"
+    }
+},
+{
+    "pk": 292, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Office of Inspector General"
+    }
+},
+{
+    "pk": 293, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Administration"
+    }
+},
+{
+    "pk": 294, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Personnel"
+    }
+},
+{
+    "pk": 295, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Business Services"
+    }
+},
+{
+    "pk": 296, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Communications and Government Relations"
+    }
+},
+{
+    "pk": 297, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Risk Mitigation Services"
+    }
+},
+{
+    "pk": 298, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Data Integration"
+    }
+},
+{
+    "pk": 299, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "CJLeads"
+    }
+},
+{
+    "pk": 300, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Fraud, Waste and Abuse"
+    }
+},
+{
+    "pk": 301, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Government Business Intelligence Competency Center"
+    }
+},
+{
+    "pk": 302, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Executive Division"
+    }
+},
+{
+    "pk": 303, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Elections Administration"
+    }
+},
+{
+    "pk": 304, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Campaign Finance"
+    }
+},
+{
+    "pk": 305, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Voting Systems Division"
+    }
+},
+{
+    "pk": 306, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Director's Office"
+    }
+},
+{
+    "pk": 307, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Deputy Director's Office"
+    }
+},
+{
+    "pk": 308, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Classification & Compensation"
+    }
+},
+{
+    "pk": 309, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Equal Employment Opportunity, Diversity and Inclusion"
+    }
+},
+{
+    "pk": 310, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Employee Relations and Local Government"
+    }
+},
+{
+    "pk": 311, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Learning & Development"
+    }
+},
+{
+    "pk": 312, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Operations and Benefits"
+    }
+},
+{
+    "pk": 313, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Recruitment and Staffing"
+    }
+},
+{
+    "pk": 314, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Appalacian State University"
+    }
+},
+{
+    "pk": 315, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": " East Carolina University"
+    }
+},
+{
+    "pk": 316, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Fayetteville State University"
+    }
+},
+{
+    "pk": 317, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Elizabeth City State University"
+    }
+},
+{
+    "pk": 318, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "NC Agricultural and Technical State University"
+    }
+},
+{
+    "pk": 319, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "North Carolina Central University"
+    }
+},
+{
+    "pk": 320, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": " NC State University"
+    }
+},
+{
+    "pk": 321, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": " UNC Asheville"
+    }
+},
+{
+    "pk": 322, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": " UNC-Chapel Hill"
+    }
+},
+{
+    "pk": 323, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": " UNC Charlotte"
+    }
+},
+{
+    "pk": 324, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": " UNC Greensboro"
+    }
+},
+{
+    "pk": 325, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": " UNC Pembroke"
+    }
+},
+{
+    "pk": 326, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": " UNC Wilmington"
+    }
+},
+{
+    "pk": 327, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": " UNC School of the Arts"
+    }
+},
+{
+    "pk": 328, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": " Western Carolina University"
+    }
+},
+{
+    "pk": 329, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": " Winston-Salem State University"
+    }
+},
+{
+    "pk": 330, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": " North Carolina School of Science and Mathematics"
+    }
+},
+{
+    "pk": 331, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "UNC Center for Public Television (UNC-TV)"
+    }
+},
+{
+    "pk": 332, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "The North Carolina Arboretum"
+    }
+},
+{
+    "pk": 333, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "The North Carolina State Approving Agency (NCSAA)"
+    }
+},
+{
+    "pk": 334, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "The North Carolina Center for International Understanding (NCCIU)"
+    }
+},
+{
+    "pk": 335, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "The North Carolina State Education Assistance Authority (NCSEAA)"
+    }
+},
+{
+    "pk": 336, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "North Carolina Center for the Advancement of Teaching (NCCAT)"
+    }
+},
+{
+    "pk": 337, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "UNC Press"
+    }
+},
+{
+    "pk": 338, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "UNC Health Care System"
+    }
+},
+{
+    "pk": 339, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "N.C. Area Health Education Centers Program"
+    }
+},
+{
+    "pk": 340, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Rules Division"
+    }
+},
+{
+    "pk": 341, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Hearings Division"
+    }
+},
+{
+    "pk": 342, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Civil Rights Division"
+    }
+},
+{
+    "pk": 343, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Court Programs and Management Services Division"
+    }
+},
+{
+    "pk": 344, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Court Services Division"
+    }
+},
+{
+    "pk": 345, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Guardian ad Litem"
+    }
+},
+{
+    "pk": 346, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Legal and Legislative Services"
+    }
+},
+{
+    "pk": 347, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Organizational Development Division"
+    }
+},
+{
+    "pk": 348, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Purchasing Office"
+    }
+},
+{
+    "pk": 349, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Research and Planning Division"
+    }
+},
+{
+    "pk": 350, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Technology Services Division"
+    }
+},
+{
+    "pk": 351, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Legislative Services"
+    }
+},
+{
+    "pk": 352, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Bill Drafting Division"
+    }
+},
+{
+    "pk": 353, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Fiscal Research Division"
+    }
+},
+{
+    "pk": 354, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Information Systems Division"
+    }
+},
+{
+    "pk": 355, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Program Evaluation Division"
+    }
+},
+{
+    "pk": 356, 
+    "model": "catalog.division", 
+    "fields": {
+        "name": "Research Division"
+    }
+}
+]
