@@ -47,18 +47,20 @@ class FacetedSearchCustomView(FacetedSearchView):
 
         return paginator, page
 
-    def clean_filters(self):
-        """Returns a list of tuples (filter, value) of applied facets"""
+    def get_selected_facets(self):
+        """
+            Returns a tuple of two lists ([fields,], [values])
+        """
+        fields = []
         filters = []
         # get distinct facets
-        facets = list(set(self.form.selected_facets))
-        for facet in facets:
+        for facet in self.form.selected_facets:
             if ":" not in facet:
                 continue
-            field, value = facet.split(":", 1)
-            field = field.replace('_', ' ').replace('exact', '').title()
-            filters.append((field, value))
-        return filters
+            field, filter = facet.split(":", 1)
+            fields.append(field.replace('_exact', ''))
+            filters.append(filter)
+        return fields, filters
 
     def create_response(self):
         """
@@ -87,7 +89,9 @@ class FacetedSearchCustomView(FacetedSearchView):
 
     def extra_context(self):
         extra = super(FacetedSearchCustomView, self).extra_context()
-        extra['filters'] = self.clean_filters()
+        fields, filters = self.get_selected_facets()
+        extra['selected_facets'] = zip(fields, filters)
+        extra['filters'] = filters
         facets = extra.get('facets', {})
         extra['facets'] = self.remove_empty_facets(facets)
         model_type = self.request.path.split('/')[1]

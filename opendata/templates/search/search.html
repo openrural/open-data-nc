@@ -26,10 +26,10 @@
             <h3>Data Catalog</h3>
             <div id="reset-filters">
                 <br>
-                {% if filters %}
+                {% if selected_facets %}
                 <strong>Active Filters: </strong><br>
-                {% for facet, value in filters %}
-                    <a class="facet_removal" href="{% remove_facet request value %}"><i class="icon-remove-sign"></i></a> {{ facet }}: {{ value }}<br />
+                {% for field, filter in selected_facets %}
+                    <a class="facet_removal" href="{% remove_facet request filter %}"><i class="icon-remove-sign"></i></a> {{ field|title }}: {{ filter|title }}<br />
                 {% endfor %}
                 <br>
                 <a href="{{ request.path }}{% if query %}?q={{ query }}{% endif %}">Reset Filters</a>
@@ -50,7 +50,15 @@
                     {% for facet in facets %}
                         {% if facet.1 %}
                         {% with path=request.get_full_path %}
-                            <li class="nav-item"><a href="{{ request.get_full_path }}{% if '?q=' not in path %}?q={% endif %}&amp;selected_facets={{ field }}_exact:{{ facet.0|urlencode }}">{{ facet.0|title }} ({{ facet.1 }})</a></li>
+                            <li class="nav-item">
+                               {% if not facet.0 in filters %}
+                                <a href="{{ request.get_full_path }}{% if '?q=' not in path %}?q={% endif %}&amp;selected_facets={{ field }}_exact:{{ facet.0|urlencode }}">
+                                    {{ facet.0|title }} ({{ facet.1 }})
+                                </a>
+                                {% else %}
+                                   <span class="muted" title="Filter already applied">{{ facet.0|title }} ({{ facet.1 }})</span>
+                                {% endif %}
+                            </li>
                         {% endwith %}
                         {% endif %}
                     {% endfor %}
