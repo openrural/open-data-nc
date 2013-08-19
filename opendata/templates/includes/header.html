@@ -1,0 +1,40 @@
+{% load widget_tweaks facet_tags %}
+<header>
+	<div class="row-fluid">
+		<div id="logo" class="span3"><a href="{% url "home" %}"><img src="{{ STATIC_URL }}bootstrap/img/logo.png" alt="OpenNC: Making public data public" title="OpenNC" /></a></div>
+		<div id="header_text" class="span7">
+			<p>Looking for data? Welcome to the marketplace of data on the public record. Feel free to browse, share and contribute to our collection.</p>
+		</div>
+		<div id="login" class="span2"> 
+			{% if not user.is_authenticated %}
+				<a id="about" href="#">About Us</a>
+				<span class="accent"> | </span>
+				<a href="{% url "auth_login" %}">Login</a>
+				<span class="accent"> | </span>
+				<a href="{% url "registration_register" %}">Register</a>
+			{% else %}
+				<h5>Hi, <a class="accent">{{ user.username }}</a></h5>
+				<h5 id="logo_text">Open<span class="accent">NC</span></h5>
+			{% if user.is_staff %}
+				<a href="{% url "admin:index" %}">Admin</a>
+			{% else %}
+				<a id="about" href="#">About Us</a>
+			{% endif %}
+				<span class="accent"> | </span>
+				<a href="{% url "auth_logout" %}">Log Out</a>
+			{% endif %}
+	    </div>
+	</div>
+	<div class="row-fluid">
+	    <div class="span10">
+	        <form class="form-search" method="get" action=".">
+	            <div class="control-group">
+	                {{ form.q|attr:"placeholder:Search the data catalog..." }}
+	                {% for facet in form.selected_facets %}
+	                    <input type="hidden" name="selected_facets" value="{{ facet }}" />
+	                {% endfor %}
+	            </div>
+	        </form>
+	    </div>
+	</div>
+</header>

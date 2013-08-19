@@ -1,16 +1,64 @@
 {% extends "base.html" %}
 {% load recent_resources %}
-{% block content %}
-    <p>Welcome!</p>
-<a class="twitter-timeline" href="https://twitter.com/twitterapi" data-widget-id="258664344257167360">Tweets by @twitterapi</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+{% load widget_tweaks facet_tags %}
 
-     <p></p>
-     <p><a href="{% url 'suggest-create' %}" class="btn">Suggest Data</a>
-        <a href="{% url 'request-list' %}" class="btn">Request data</a></p>
-     <h3>Latest resources</h3>
-    {% get_latest 5 as latest_resources %}
-    {% for resource in latest_resources %}
-        <p>{{ resource }}</p>
-    {% endfor %}
+{%block extra-js%}
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+{% endblock extra-js %}
+
+{% block content %}
+
+<div class="row-fluid">
+	<div class="span12">
+		<h3 class="ribbonLeft">
+	    	Featured Projects
+	    </h3>
+	    <div id="featured_projects_window"></div>
+		<h2 class="ribbonRight">
+		    Description/Title of Project
+		</h2>
+	</div>
+</div>
+
+</div></div> <!-- /span9 & /row-fluid from base -->
+
+<div class="row-fluid">
+	<div id="latest_resources_sidebar" class="span3">
+
+	<!-- <a class="twitter-timeline" href="https://twitter.com/twitterapi" data-widget-id="258664344257167360">Tweets by @twitterapi</a> -->
+		<div id="latest_resources_title">
+			<h1>Latest</h1>
+			<h1> Resources</h1>
+		</div>
+	</div>
+
+	{% get_latest 10 as latest_resources %}
+	<div class="span9">
+		<div class="table-wrapper">
+			<table cellspacing="0" id="tech-companies">
+				<thead>
+					<tr>
+						<th class="persist essential">Date</th>
+						<th class="essential">Item</th>
+						<th class="optional">Location</th>
+						<th class="essential">Format</th>
+						<th class="optional">Type</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for r in latest_resources%}
+						<tr>
+							<th>{{ r.created|date:"F j" }}</th>  <!-- Shows full month and date without leading zero -->
+							<td><a href="#">{{ r.name }}</a></td>
+							<td>{{ r.counties.all.0.name }}</td>
+							<td>{{ r.url_types.all.0.name }}</td>
+							<td>{{ r.data_types.all.0.name }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div><!-- /table-wrapper -->
+	</div>
+</div>
 {% endblock %}
+

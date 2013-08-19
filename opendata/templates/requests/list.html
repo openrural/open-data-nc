@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load ratings widget_tweaks sorting_tags pagination_tags scribbler_tags %}
+{% load widget_tweaks facet_tags %}
 
 {% block title %}Request Public Data{% endblock %}
 {% block body_id %}requests-list{% endblock body_id %}
@@ -39,10 +40,10 @@
     </div>
 {% autosort requests %}
 {% autopaginate requests 6 %}
-    <div class="requests row">
+    <div class="requests">
     {% for object in requests %}
         {% rating_by_request request on object.rating as vote %}
-        <div class="request span12">
+        <div class="request">
             <h3 class="nom_text">{{ object }}</h3>
             <div class="votes">
                 {{ object.rating_votes }} vote{% if object.rating_votes != 1 %}s{% endif %}
@@ -78,4 +79,5 @@
     {% endfor %}
     </div>
     <div id="pager">{% paginate %}</div>
+</div></div> <!-- /span9 & /row-fluid from base -->
 {% endblock %}

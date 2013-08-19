@@ -16,11 +16,13 @@
 @grayLight:             #999;
 @grayLighter:           #eee;
 @white:                 #fff;
+@openGray:				#e6e6e6;
+@openGrayDark:			#737774;
 
 
 // Accent colors
 // -------------------------
-@blue:                  #049cdb;
+@blue:                  #29abe2;
 @blueDark:              #0064cd;
 @green:                 #46a546;
 @red:                   #9d261d;
@@ -28,18 +30,19 @@
 @orange:                #f89406;
 @pink:                  #c3325f;
 @purple:                #7a43b6;
+@brownDark:				#574341;
 
 
 // Scaffolding
 // -------------------------
 @bodyBackground:        @white;
-@textColor:             @grayDark;
+@textColor:             @brownDark;
 
 
 // Links
 // -------------------------
-@linkColor:             #08c;
-@linkColorHover:        darken(@linkColor, 15%);
+@linkColor:             @brownDark;
+@linkColorHover:;
 
 
 // Typography
@@ -48,7 +51,7 @@
 @serifFontFamily:       Georgia, "Times New Roman", Times, serif;
 @monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
-@baseFontSize:          14px;
+@baseFontSize:          16px;
 @baseFontFamily:        @sansFontFamily;
 @baseLineHeight:        20px;
 @altFontFamily:         @serifFontFamily;
@@ -110,9 +113,9 @@
 // Forms
 // -------------------------
 @inputBackground:               @white;
-@inputBorder:                   #ccc;
+@inputBorder:                   @blue;
 @inputBorderRadius:             @baseBorderRadius;
-@inputDisabledBackground:       @grayLighter;
+@inputDisabledBackground:       @openGray;
 @formActionsBackground:         #f5f5f5;
 @inputHeight:                   @baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
 
@@ -162,7 +165,7 @@
 
 // Hr border color
 // -------------------------
-@hrBorder:                @grayLighter;
+@hrBorder:                @blue;
 
 
 // Horizontal forms & lists

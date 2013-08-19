@@ -64,7 +64,7 @@
 @import "../flat-ui/less/modules/type";
 @import "../flat-ui/less/modules/buttons";
 @import "../flat-ui/less/modules/caret";
-@import "../flat-ui/less/modules/navbar";
+/*@import "../flat-ui/less/modules/navbar";*/
 /*@import "../flat-ui/less/modules/select";*/
 @import "../flat-ui/less/modules/input";
 /*@import "../flat-ui/less/modules/checkbox-and-radio";*/
@@ -88,11 +88,11 @@
 /* Variables
 ==================== */
 
-@base:             @belize-hole;
-@firm:             @turquoise;
+@base:             @grayDark;
+@firm:             @brownDark;
 
-@gray:             @concrete;
-@lightgray:        @silver;
+@gray:             @openGrayDark;
+@lightgray:        @openGray;
 @inverse:          white;
 
 @success:          #2ECC71; // @emerald is undefined.
@@ -100,9 +100,7 @@
 @warning:          @sun-flower;
 @info:             @peter-river;
 
-@link-color:       @green-sea;
-@link-hover-color: @turquoise;
-
+@link-color:       @grayDark;
 
 /*@inputHeight: 25px;
 @baseLineHeight: 25px;*/
@@ -117,9 +115,52 @@
 /* Sitewide
 ==================== */
 
+@font-face {
+    font-family: 'open_sans_condensedbold';
+    src: url('../flat-ui/fonts/OpenSans-CondBold-webfont.eot');
+    src: url('../flat-ui/fonts/OpenSans-CondBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../flat-ui/fonts/OpenSans-CondBold-webfont.woff') format('woff'),
+         url('../flat-ui/fonts/OpenSans-CondBold-webfont.ttf') format('truetype'),
+         url('../flat-ui/fonts/OpenSans-CondBold-webfont.svg#open_sans_condensedbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'open_sans_condensedbold', Arial, sans-serif;
+}
+
 .container {
-    magrin: 0 auto;
+    margin: 0 auto;
     max-width: 1170px;
+}
+
+p { 
+    margin: 14px 0;
+}
+
+a { 
+    text-decoration: none;
+}
+
+.accent {
+    color: @blue;
+    font-size: @baseFontSize;
+    vertical-align: top;
+}
+
+.open { 
+    background-color: #F4F4F4;
+    box-shadow: 2px 2px 3px #444444;
+    display: block;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 5px;
+    top: 40px;
+    width: 70%;
+    z-index: 500; 
 }
 
 .navbar {
@@ -153,9 +194,148 @@
     min-height: 1px;
 }
 
+header {
+    margin-top: 15px;
+
+    #logo {
+        @media (max-width: 767px) {
+            margin-top: 40px;
+        }
+    }
+
+    #header_text {
+        font-size: 1.6em;
+        text-align: center;
+        @media (max-width: 767px) {
+            .hidden;
+        }
+    }
+
+    #login {
+        text-align: right;
+
+        h5 {
+            text-transform: none;
+            display: inline;
+        }
+
+        @media (max-width: 767px) {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            right: 0;
+            #translucent.background(@white, .8);
+            z-index: @zindexFixedNavbar;
+
+            h5 {
+                float: left;
+                margin: 0;
+
+                &#logo_text {
+                    position: absolute;
+                    left: 40%;
+                }
+            }
+
+            #about {
+                .hidden;
+            }
+        }
+    }    
+}
+
+nav {
+    h1 {
+        display: inline;
+        padding-bottom: 5px;
+        border-bottom: 2px solid @blue;
+    }
+
+    p {
+        width: 75%;
+    }
+
+    #menu-toggle {
+        .hidden;
+    }
+
+    @media (max-width: 767px) {
+        text-align: justified;
+        margin: 0 auto;    
+    }
+}
+
 footer {
-    margin-top: 20px;
-    padding-top: 10px;
+    margin-top: 1em;
+    padding: 1.5em;
+
+    @media (max-width: 767px) {
+        text-align: center; 
+    }
+
+    .offset4 h4 {
+        text-align: right;
+        @media (max-width: 767px) {
+            text-align: center;  
+        }
+    }
+
+    span{
+        color: @blue;
+    }
+}
+
+/**** Ribbon ****/
+.ribbon {
+    position: relative;
+    padding: 5px 10px;
+    background-color: @blue;
+    text-shadow: 0px 1px 2px darker(@brownDark, 20%);
+    -webkit-box-shadow: 0px 2px 4px #888;
+    -moz-box-shadow: 0px 2px 4px #888;
+    box-shadow: 0px 2px 4px #888;
+
+    &:before {
+        content: ' ';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+    }
+       
+}
+
+
+.ribbonRight {
+    .ribbon;
+
+    width: 75%;
+    bottom: 2.95em;
+    left: .6em;
+    float:right;
+
+    &:before {
+        right: 0px;
+        top: 100%;
+        border-width: 8px;
+        border-color: @brownDark transparent transparent @brownDark;
+    }
+}
+
+.ribbonLeft {
+    .ribbon;
+
+    width: auto;
+    float: left;
+    right: .4em;
+    top: .3em;
+
+    &:before {
+        left: 0px;
+        bottom: 100%;
+        border-width: 5px;
+        border-color: transparent @brownDark @brownDark transparent;
+    }
 }
 
 .form-horizontal {
@@ -167,11 +347,104 @@ footer {
 /* Individual pages
 ==================== */
 
+/***** Home *****/
+
+#featured_projects_window {
+    height: 400px;
+    background-image: url('http://images4.fanpop.com/image/photos/14700000/So-cute-puppies-14749028-1600-1200.jpg');
+    background-size: cover;
+}
+
+#latest_resources_title {
+    text-align: right;
+    border-right: 2px @blue solid;
+    padding: 5px;
+
+    @media (max-width: 767px) {
+                text-align: center;
+                border: 2px solid @blue;
+                border-style: solid none;
+            }
+
+}
+
+/** Latest Resources Table **/
+
+table {
+    width: 100%;
+    font-size: 1.2em;
+
+    a {
+        color: @blue;
+    }
+
+    tr:nth-child(even) {
+        background-color: @openGray;
+    }
+}
+
+
+
+thead th {
+   white-space: nowrap;
+   border-bottom: 1px solid #ccc;
+   color: @openGrayDark;
+}
+
+th, td {
+   padding: .5em 1em;
+   text-align: left;
+}
+
+.enhanced th,
+.enhanced td {
+   display: none;
+}
+
+.enhanced th.essential, 
+.enhanced td.essential {
+   display: table-cell;
+}
+
+@media screen and (min-width: 500px) {
+   .enhanced th.optional, 
+   .enhanced td.optional {
+      display: table-cell;
+   }
+}
+
+@media screen and (min-width: 800px) {
+   .enhanced th, 
+   .enhanced td {
+      display: table-cell;
+   }
+}
+
+.table-menu, .table-menu-btn {
+    #latest_resources_title;
+   position: relative;
+   float: right;
+   background-color: #fff;
+   padding: 10px;
+   width: 100%;
+}
+
+.table-menu ul { 
+    list-style: none; 
+    }
+
+.table-menu-hidden {
+   left: -999em;
+   right: auto;
+}
+.table-wrapper {
+   position: relative;
+}
+
 /***** Search *****/
 
 .catalog div.search-tools {
     padding: 10px;
-    background-color: @clouds;
     border-radius: 6px;
     form {
         margin-top: 15px;

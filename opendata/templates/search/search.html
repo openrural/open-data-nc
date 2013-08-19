@@ -16,12 +16,16 @@
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
     <script src="{{ STATIC_URL }}selectable/js/jquery.dj.selectable.js"></script>
     <script src="{{ STATIC_URL }}js/selectable.js"></script>
+    <script>
+        if ($('#refine-results').is(':visible')) {
+            $('#goto_find_data p').toggleClass('hidden');
+        } 
+    </script>
 {% endblock extra-js %}
 
-{% block content %}
 
-<div class="row">
-    <div class="span4" id="refine-results">
+{% block catalog_search %}
+    <div id="refine-results">
         <div class="search-tools">
             <h3>Data Catalog</h3>
             <div id="reset-filters">
@@ -35,14 +39,6 @@
                 <a href="{{ request.path }}{% if query %}?q={{ query }}{% endif %}">Reset Filters</a>
                 {% endif %}
             </div>
-            <form class="form-search" method="get" action=".">
-                <div class="control-group">
-                    {{ form.q|attr:"placeholder:Search the data catalog..." }}
-                    {% for facet in form.selected_facets %}
-                        <input type="hidden" name="selected_facets" value="{{ facet }}" />
-                    {% endfor %}
-                </div>
-            </form>
             <ul class="nav nav-list">
             {% for field, facets in facets.fields.items %}
                 {% if facets %}
@@ -67,22 +63,28 @@
             </ul>
         </div>
     </div>
+    {% endblock %}
 
-    <div class="span8 search-results">
-        {% for result in page.object_list %}
-            {{ result.text|safe }}
-        {% if not forloop.last %}<hr />{% endif %}
-        {% empty %}
-        <p>No results found.</p>
-        {% endfor %}
+    {% block content %}
+    <div class="row-fluid">
+        <div class="span10 search-results">
+            {% for result in page.object_list %}
+                {{ result.text|safe }}
+            {% if not forloop.last %}<hr />{% endif %}
+            {% empty %}
+            <p>No results found.</p>
+            {% endfor %}
 
-        {% if page.has_previous or page.has_next %}
-        <div>
-            {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
-            |
-            {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
+            {% if page.has_previous or page.has_next %}
+            <div>
+                {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
+                |
+                {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
+            </div>
+            {% endif %}
         </div>
-        {% endif %}
     </div>
-</div>
+</div></div> <!-- /span9 & /row-fluid from base -->
 {% endblock %}
+
+

@@ -84,7 +84,7 @@ input[type="color"],
   margin-bottom: @baseLineHeight / 2;
   font-size: @baseFontSize;
   line-height: @baseLineHeight;
-  color: @gray;
+  color: @openGray Dark;
   .border-radius(@inputBorderRadius);
   vertical-align: middle;
 }
@@ -124,7 +124,7 @@ input[type="color"],
 
   // Focus state
   &:focus {
-    border-color: rgba(82,168,236,.8);
+    border-color: @blue;
     outline: 0;
     outline: thin dotted \9; /* IE6-9 */
     .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)");
@@ -187,7 +187,7 @@ input[type="checkbox"]:focus {
 // Make uneditable inputs look inactive
 .uneditable-input,
 .uneditable-textarea {
-  color: @grayLight;
+  color: @openGray;
   background-color: darken(@inputBackground, 1%);
   border-color: @inputBorder;
   .box-shadow(inset 0 1px 2px rgba(0,0,0,.025));

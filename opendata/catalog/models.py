@@ -1,6 +1,6 @@
-import os
-from lxml import etree
-from shapely.wkt import loads
+# import os
+# from lxml import etree
+# from shapely.wkt import loads
 
 from operator import attrgetter
 from django.db import models
