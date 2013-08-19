@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic.base import TemplateView
 
-from registration.backends.simple.views import RegistrationView
+from opendata.views import UserRegistrationView
 
 from opendata.views import Home
 
@@ -15,8 +15,9 @@ urlpatterns = patterns('',
     url(r'^$', Home.as_view(), name='home'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.auth_urls')),
-    url(r'^accounts/register/$', RegistrationView.as_view(),
-        name='registration_register'),
+    url(r'^accounts/register/$', UserRegistrationView.as_view(
+        success_url=settings.LOGIN_REDIRECT_URL,
+        ), name='registration_register'),
     url(r'^accounts/register/closed/$',
         TemplateView.as_view(template_name='registration/registration_closed.html'),
         name='registration_disallowed'),
