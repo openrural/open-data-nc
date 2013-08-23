@@ -20,6 +20,31 @@
         // if ($('#refine-results').is(':visible')) {
         //     $('#goto_find_data p').toggleClass('hidden');
         // } 
+
+        $('ul').each(function(){
+            var ul = $(this);
+            var count_li = ul.find('li').size();
+            if(count_li > 5) {
+                ul.find('li:gt(4)').hide().end()
+                .append($('<li class="show-more"><a class="accent">Show More...</a></li>'));
+            }
+        });
+
+        $('.show-more').click(function(e){
+            e.preventDefault();
+            console.log('hi');
+            $(this).siblings(':hidden').fadeIn('slow').end().replaceWith($('<li class="show-less"><a class="accent">Show Less</a></li>').fadeIn('slow'));
+        });
+
+    </script>
+
+    <script>
+        $('.show-less').click(function(){
+            console.log(this);
+            $(this).remove();
+            $(this).parent('ul').find('li:gt(4)').hide().end()
+                    .append($('<li class="show-more"><a class="accent">Show More...</a></li>'));
+        });
     </script>
 {% endblock extra-js %}
 
@@ -41,13 +66,14 @@
 {% endblock form %}
 
 {% block catalog_search %}
-    <div id="refine-results">
-        <div class="search-tools">
-            <h3>Data Catalog</h3>
+    <div id="refine-results" class="row-fluid">
+        <h3>Data Catalog</h3>
+        <div class="search-tools span10">
             <div id="reset-filters">
                 <br>
                 {% if selected_facets %}
-                <strong>Active Filters: </strong><br>
+                <strong>Active Filters: </strong>
+                <br>
                 {% for field, filter in selected_facets %}
                     <a class="facet_removal" href="{% remove_facet request filter %}"><i class="icon-remove-sign"></i></a> {{ field|title }}: {{ filter|title }}<br />
                 {% endfor %}
@@ -55,14 +81,15 @@
                 <a href="{{ request.path }}{% if query %}?q={{ query }}{% endif %}">Reset Filters</a>
                 {% endif %}
             </div>
-            <ul class="nav nav-list">
+            
             {% for field, facets in facets.fields.items %}
                 {% if facets %}
-                    <li class="nav-header">By {{ field }}</li>
+                <ul class="filters">
+                    <h5 class="filter_title"><a href="#">By {{ field }}</a></h5>
                     {% for facet in facets %}
                         {% if facet.1 %}
                         {% with path=request.get_full_path %}
-                            <li class="nav-item">
+                            <li>
                                {% if not facet.0 in filters %}
                                 <a href="{{ request.get_full_path }}{% if '?q=' not in path %}?q={% endif %}&amp;selected_facets={{ field }}_exact:{{ facet.0|urlencode }}">
                                     {{ facet.0|title }} ({{ facet.1 }})
@@ -75,8 +102,9 @@
                         {% endif %}
                     {% endfor %}
                 {% endif %}
+                </ul>
             {% endfor %}
-            </ul>
+            
         </div>
     </div>
     {% endblock %}

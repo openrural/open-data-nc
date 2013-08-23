@@ -15,7 +15,7 @@
 
 {% block extra-js %}
 <script> 
-	if($('#suggest_form').is(':visible')) {
+	if($('#url_suggest_form').is(':visible')) {
 		$('.form-search').hide();
 	} 
 </script>
@@ -26,53 +26,53 @@
 {% endblock %}
 
 {% block content %}
-<h2>Share Public Data</h2>
-<p>(<a href="http://opendataphilly.org/opendata/submit/">http://opendataphilly.org/opendata/submit/</a>)</p>
+<div class="gray-card">
+	<h2>Share Public Data</h2>
 
-<p>We realize that we haven't listed every North Carolina-based government data
- set in the Open N.C. catalog. If have a specific data set that you've found
- and would like to share, let us know by completing and submitting the form
- below. We'll review the information and determine whether the data set
- should be included in Open N.C.. The data must be specific to North
- Carolina, available online, and contain information in columns and rows. Our
- goal is to catalog government datasets that adhere as closely as possible to
- the 8 Principles of Open Government Data. A full list of review criteria is
- available on the FAQ page.
-</p>
+	<p>We realize that we haven't listed every North Carolina-based government data
+	 set in the Open N.C. catalog. If you have a specific data set that you've found
+	 and would like to share, let us know by completing and submitting the form
+	 below. We'll review the information and determine whether the data set
+	 should be included in Open N.C.. The data must be specific to North
+	 Carolina, available online, and contain information in columns and rows. Our
+	 goal is to catalog government datasets that adhere as closely as possible to
+	 the 8 Principles of Open Government Data. A full list of review criteria is
+	 available on the <a href="{% url 'faq' %}">FAQ</a> page.
+	</p>
 
-<p>
-This form is for recommending specific data sets, applications, or APIs.
-If you'd like to nominate a general area where you think data should be more
-easily available, visit the Request Data page.
-</p>
+	<p>
+	This form is for recommending specific data sets, applications, or APIs.
+	If you'd like to nominate a general area where you think data should be more
+	easily available, visit the Request Data page.
+	</p>
 
-<p>
-Ideally, the data you want to share is already public on a government website.
-If it is, please post here the URL that points directly to the dataset.
-</p>
+	<p>
+	Ideally, the data you want to share is already public on a government website.
+	If it is, please post here the URL that points directly to the dataset.
+	</p>
 
-<br />
+	<br />
 
-<form id="suggest_form" action="{% url 'suggest-create' %}" method='get'>
-    {{ form.url|attr:'placeholder:URL...' }}
-    <input type="submit" value="Submit" class="btn"/>
-</form>
+	<form id="url_suggest_form" action="{% url 'suggest-create' %}" method='get'>
+	    {{ form.url|attr:'placeholder:URL...' }}
+	    <input type="submit" value="Submit" class="btn"/>
+	</form>
 
-<p>
-If the data is not already online, there are several ways you can help put it
-online. Remember, though, that the more disconnected data becomes from its
-original source the less it adheres to the 8 Principles of Open Government
-Data. Data sets that aren't as close to the source as possible and for which
-the acquisition and publication processes aren't transparent will not be
-included in the catalog.
-</p>
+	<p>
+	If the data is not already online, there are several ways you can help put it
+	online. Remember, though, that the more disconnected data becomes from its
+	original source the less it adheres to the 8 Principles of Open Government
+	Data. Data sets that aren't as close to the source as possible and for which
+	the acquisition and publication processes aren't transparent will not be
+	included in the catalog.
+	</p>
+</div>
 
 <h2>Tools for Sharing Public Data</h2>
 
 <br>
 
 <div class="sharing_tools">
-
 	<div class="row-fluid">
 		<h3 class="span2"><a href="http://opendata.socrata.com">Socrata</a></h3>
 		<div class="span10">If you have a single file in the .csv, .tsv, .xls, or .xlsx formats, you can upload it to Socrata, where users will be able to download it or access it with an API. Note that there's a 200MB limit to the size of the file you can upload.

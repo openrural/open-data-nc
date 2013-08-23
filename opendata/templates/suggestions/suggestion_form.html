@@ -19,9 +19,20 @@
 
 {% block content %}
     <h2>Suggest Data</h2>
-    <form action="{% url 'suggest-create' %}" method="POST">
+    <br><br>
+    <form id="suggest_data_form" action="{% url 'suggest-create' %}" method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+        {% for field in form %}
+        <div class="row-fluid user-form">
+        	<div class="span2">
+        		{{field.label_tag}}
+        	</div>
+        	<div class="span8">
+        		{{field}}
+        	</div>
+        </div>
+        {% endfor %}
+        
         <p><input type="submit" value="Submit" class="btn"/></p>
     </form>
 {% endblock %}

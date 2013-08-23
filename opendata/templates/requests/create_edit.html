@@ -8,21 +8,28 @@
 
 {% block content %}
 <h1>Request Data</h1>
+<br><br>
 <form method="post" action=".">
     {% csrf_token %}
     {% for field in form %}
-    <div class="control-group{% if field.errors %} error{% endif %}">
-        <label class="control-label" for="{{ field.id_for_label }}">
-            {{ field.label }}
-        </label>
-        <div class="controls" id="controls_{{ field.html_name }}">
-            {{ field }}
-            {% if field.errors %}
-            <span class="help-block">{{ field.errors.0|safe }}</span>
-            {% endif %}
-            {% if field.help_text %}
-            <span class="help-block">{{ field.help_text|safe }}</span>
-            {% endif %}
+    <div class="row-fluid">
+        <div class="span2">
+            <div class="control-group{% if field.errors %} error{% endif %}">
+                <label class="control-label" for="{{ field.id_for_label }}">
+                    {{ field.label }}
+                </label>
+            </div>
+        </div>
+        <div class="span8">
+            <div class="controls" id="controls_{{ field.html_name }}">
+                {{ field }}
+                {% if field.errors %}
+                <span class="help-block">{{ field.errors.0|safe }}</span>
+                {% endif %}
+                {% if field.help_text %}
+                <span class="help-block">{{ field.help_text|safe }}</span>
+                {% endif %}
+            </div>
         </div>
     </div>
     {% endfor %}
