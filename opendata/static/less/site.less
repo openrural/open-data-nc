@@ -141,6 +141,10 @@ body {
     }
 }
 
+#main-content {
+    min-height: 500px;
+}
+
 hr {
     border-color: @openGray;
     border-size: 2px;
@@ -165,7 +169,6 @@ a {
     }
 
     &.btn {
-        background-color: @blue;
         margin: 15px 0;
     }
 }
@@ -463,14 +466,6 @@ footer {
                 position: relative;
                 left: 25%;
                 margin: 20px 0 0;
-            }
-
-            &.btn-primary {
-                .btn;
-                
-                &:hover {
-                    background-color: @blue;
-                }
             }
         }
 

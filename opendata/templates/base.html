@@ -40,7 +40,7 @@
         {% endblock header %}
         
         {% block content-outer %}
-        <div id="content">
+        <div id="main-content">
             <div class="row-fluid">
                 {% block messages-outer %}
                 <div id="messages" class="span12">
@@ -99,6 +99,7 @@
                                 <form class="form-search" method="get" action="{% url 'catalog_search' %}">
                                     <div class="control-group">
                                         <input id="id_q" name="q" placeholder="Search the data catalog..." type="text">
+                                        <!-- <input type="Submit" value="Search" class="btn" /> -->
                                     </div>
                                 </form>
                             </div>
@@ -109,8 +110,8 @@
                     {% block catalog_search %}{% endblock %}
 
                     {% block content %}{% endblock content %}
-                </div>  
-            </div>
+                </div>  <!-- /span9 -->
+            </div> <!-- /row-fluid -->
         </div> <!-- /#content -->
     </div> <!-- /container -->
     {% endblock content-outer %}

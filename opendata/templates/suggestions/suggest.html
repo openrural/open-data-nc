@@ -26,10 +26,12 @@
 {% endblock %}
 
 {% block content %}
-<div class="gray-card">
-    {% scribble "share-page-1" %}
-	<h2>Share Public Data</h2>
+<h1>Share Public Data</h1>
 
+
+    {% scribble "share-page-1" %}
+
+<div class="gray-card">
 	<p>We realize that we haven't listed every North Carolina-based government data
 	 set in the Open N.C. catalog. If you have a specific data set that you've found
 	 and would like to share, let us know by completing and submitting the form
@@ -53,7 +55,7 @@
 	</p>
     {% endscribble %}
 
-	<br />
+	<br>
 
 	<form id="url_suggest_form" action="{% url 'suggest-create' %}" method='get'>
 	    {{ form.url|attr:'placeholder:URL...' }}

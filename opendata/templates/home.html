@@ -20,7 +20,7 @@
                 {% endthumbnail %}
 
                     <h2 class="ribbonRight">
-                        {{ img.resource.name }}
+                        <a href="{{ img.get_absolute_url }}">{{ img.resource.name }}</a>
                     </h2>
                 </div>
 			{% endfor %}
@@ -54,7 +54,7 @@
 				<tbody>
 					{% for r in latest_resources%}
 						<tr>
-							<td><a href="#">{{ r.name }}</a></td>
+							<td><a href="{{ r.get_absolute_url }}">{{ r.name }}</a></td>
 							<td>{{ r.created|date:"F j" }}</td>
 							<td>{{ r.counties.all.0.name }}</td>
 							<td>{{ r.url_types.all.0.name }}</td>
@@ -67,7 +67,7 @@
 	</div>
 	<div class="span3">
 		<h1 class="twitter_header">Twitten by Open N.C.</h1>
-		<a class="twitter-timeline" href="https://twitter.com/_MattHayes" data-widget-id="269466275074424832" data-theme="light" data-link-color="#29abe2" data-chrome="noscrollbar noborders noheader nofooter" data-related="twitterapi,twitter" data-aria-polite="assertive" width="100%" height="370" lang="EN">Tweets by @_MattHayes</a>
+		<a class="twitter-timeline" href="https://twitter.com/OpenNC" data-widget-id="269466275074424832" data-theme="light" data-link-color="#29abe2" data-chrome="noscrollbar noborders noheader nofooter" data-related="twitterapi,twitter" data-aria-polite="assertive" width="100%" height="370" lang="EN">Tweets by @OpenNC</a>
 	</div>
 </div>
 {% endblock %}

@@ -1,5 +1,13 @@
 <div class="row-fluid gray-banner">
-    <div class="span3 resource_image"><div id="rating"><h4>star ratings</h4></div></div>
+    <div class="span3 resource_image">
+	    <div id="rating">
+			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 1 %}checked{% endif %}/>
+			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 2 %}checked{% endif %}/>
+			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 3 %}checked{% endif %}/>
+			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 4 %}checked{% endif %}/>
+			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 5 %}checked{% endif %}/>
+	    </div>
+    </div>
     <div class="span6">
 	    <h1><a href="{{ object.get_absolute_url }}">{{ object.name|safe }}</a></h1>
 	    <h4>{{ object.short_description|safe }}</h4>
