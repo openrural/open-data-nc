@@ -11,16 +11,9 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 
 $(document).ready(function(){
 
-   $(function() {
-      $('.footable').footable();
-    });
+   $('.footable').footable();
 
    $('#logo_text').hide();
-
-   // $('#menu-toggle').click(function () {
-   //    $('#menu').toggleClass('open');
-   //    e.preventDefault();
-   //  });
 
    if(!($('#user').is(':visible'))) {
       $('#logo_text').css('left', '2%');
@@ -33,17 +26,17 @@ $(document).ready(function(){
    });
 });
 
- $(window).scroll(function(){
-      // get the height of #wrap
-      var h = $('#logo').height();
-      var x = $(window).width();
-      var y = $(window).scrollTop();
-      if( y > (h+50) && x < 767 ){
-         $('#logo_text').fadeIn('slow');
-      } else {
-         $('#logo_text').fadeOut('slow');
-      }
-   });
+//displays logo text on scroll in mobile
+$(window).scroll(function(){
+   var h = $('#logo').height();
+   var x = $(window).width();
+   var y = $(window).scrollTop();
+   if( y > (h+50) && x < 767 ){
+      $('#logo_text').fadeIn('slow');
+   } else {
+      $('#logo_text').fadeOut('slow');
+   }
+});
 
 
 

@@ -5,8 +5,16 @@
 {% block body_id %}registration_form{% endblock body_id %}
 {% block body_class %}registration{% endblock %}
 
+{% block extra-js %}
+<script>
+if($('#registration').is(':visible')) {
+        $('.form-search').hide();
+    }
+</script>
+{% endblock extra-js %}
+
 {% block content %}
-<div class="floating-box">
+<div id="registration" class="floating-box">
     <h1>Register</h1>
     <form method="post" action=".">
         {% csrf_token %}

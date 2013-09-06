@@ -69,7 +69,6 @@
                     <nav>
                         <div class="row-fluid">
                             <div class="span12">
-                               <!--  <a id="menu-toggle" class="anchor-link" href="#">Menu</a> -->
                                 <div id="goto_find_data">
                                     <a href="{% url 'catalog_search' %}"><h1 class="mobile_border">Find Data<span class="accent"> ></span></h1></a>
                                     <p>Want to see what data we have so far? Browse our collection and filter by category or geography.</p>
@@ -82,6 +81,10 @@
                                     <a href="{% url 'request-list' %}"><h1>Request Data<span class="accent"> > </span></h1></a>
                                     <p>Looking for something we don't have? Request the data here to see if someone else has it or is willing to find and share.</p>
                                 </div>
+                                <div id="goto_feedback" class="visible-desktop">
+                                    <a href="mailto:info@open-nc.org?subject=Feedback for open-nc.org"><h1>Feedback?<span class="accent"> > </span></h1></a>
+                                    <p>If you see something that isn't working properly or could use an improvement, let us know!</p>
+                                </div>
                             </div>
                         </div>
                     </nav>
@@ -92,8 +95,9 @@
                     <div class="row-fluid visible-phone">
                         <div class="span9 offset3">
                             <form class="form-search" method="get" action="{% url 'catalog_search' %}">
-                                <div class="control-group">
+                                <div class="control-group input-append">
                                     <input id="id_q" name="q" placeholder="Search the data catalog..." type="text">
+                                    <button class="btn"><i class="icon-search icon-white"></i></button>
                                 </div>
                             </form>
                         </div>
@@ -108,9 +112,9 @@
                         <div class="row-fluid hidden-phone">
                             <div class="span12">
                                 <form class="form-search" method="get" action="{% url 'catalog_search' %}">
-                                    <div class="control-group">
+                                    <div class="control-group input-append">
                                         <input id="id_q" name="q" placeholder="Search the data catalog..." type="text">
-                                        <!-- <input type="Submit" value="Search" class="btn" /> -->
+                                        <button class="btn"><i class="icon-search icon-white"></i></button>
                                     </div>
                                 </form>
                             </div>

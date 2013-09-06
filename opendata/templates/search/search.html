@@ -50,11 +50,12 @@
     <div class="row-fluid hidden-phone">
         <div class="span10">
             <form class="form-search" method="get" action=".">
-                <div class="control-group">
+                <div class="control-group input-append">
                     {{ form.q|attr:"placeholder:Search the data catalog..." }}
                     {% for facet in form.selected_facets %}
                         <input type="hidden" name="selected_facets" value="{{ facet }}" />
                     {% endfor %}
+                    <button class="btn"><i class="icon-search icon-white"></i></button>
                 </div>
             </form>
         </div>
@@ -62,70 +63,65 @@
 
 {% endblock form %}
 
-{% block catalog_search %}
-    <div id="refine-results" class="row-fluid">
-        <h3>Data Catalog</h3>
-        <div class="search-tools span10">
-            <div id="reset-filters">
-                <br>
-                {% if selected_facets %}
-                <strong>Active Filters: </strong>
-                <br>
-                {% for field, filter in selected_facets %}
-                    <a class="facet_removal" href="{% remove_facet request filter %}"><i class="icon-remove-sign"></i></a> {{ field|title }}: {{ filter|title }}<br />
-                {% endfor %}
-                <br>
-                <a href="{{ request.path }}{% if query %}?q={{ query }}{% endif %}">Reset Filters</a>
-                {% endif %}
-            </div>
-            
-            {% for field, facets in facets.fields.items %}
-                {% if facets %}
-                <ul class="filters">
-                    <h5 class="filter_title"><a href="#">By {{ field }}</a></h5>
-                    {% for facet in facets %}
-                        {% if facet.1 %}
-                        {% with path=request.get_full_path %}
-                            <li>
-                               {% if not facet.0 in filters %}
-                                <a href="{{ request.get_full_path }}{% if '?q=' not in path %}?q={% endif %}&amp;selected_facets={{ field }}_exact:{{ facet.0|urlencode }}">
-                                    {{ facet.0|title }} ({{ facet.1 }})
-                                </a>
-                                {% else %}
-                                   <span class="muted" title="Filter already applied">{{ facet.0|title }} ({{ facet.1 }})</span>
-                                {% endif %}
-                            </li>
-                        {% endwith %}
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
-                </ul>
-            {% endfor %}
-            
-        </div>
-    </div>
-    {% endblock %}
-
-    {% block form_mobile %} <!-- Moves search bar under nav in mobile environment -->
+{% block form_mobile %} <!-- Moves search bar under nav in mobile environment -->
             
     <div class="row-fluid visible-phone">
         <div class="span8 offset3">
             <form class="form-search" method="get" action=".">
-                <div class="control-group">
+                <div class="control-group input-append">
                     {{ form.q|attr:"placeholder:Search the data catalog..." }}
                     {% for facet in form.selected_facets %}
                         <input type="hidden" name="selected_facets" value="{{ facet }}" />
                     {% endfor %}
+                    <button class="btn"><i class="icon-search icon-white"></i></button>
                 </div>
             </form>
         </div>
     </div>
 
-    {% endblock form_mobile %}
+{% endblock form_mobile %}
+
+{% block catalog_search %}
+    <div id="refine-results">
+        <h3>Filters</h3>
+            <div id="reset-filters">
+                {% if selected_facets %}
+                {% for field, filter in selected_facets %}
+                    <span class="label label-info"><a class="facet_removal" href="{% remove_facet request filter %}"><i class="icon-remove-sign"></i></a> {{ field|title }}: {{ filter|title }} </span>
+                {% endfor %}
+                <br>
+                <a href="{{ request.path }}{% if query %}?q={{ query }}{% endif %}">Reset Filters</a>
+                {% endif %}
+            </div>
+            <div class="search-tools">
+                {% for field, facets in facets.fields.items %}
+                    {% if facets %}
+                    <ul class="filters">
+                        <h5 class="filter_title"><a href="#">By {{ field }}</a></h5>
+                        {% for facet in facets %}
+                            {% if facet.1 %}
+                            {% with path=request.get_full_path %}
+                                <li>
+                                   {% if not facet.0 in filters %}
+                                    <a href="{{ request.get_full_path }}{% if '?q=' not in path %}?q={% endif %}&amp;selected_facets={{ field }}_exact:{{ facet.0|urlencode }}">
+                                        {{ facet.0|title }} ({{ facet.1 }})
+                                    </a>
+                                    {% else %}
+                                       <span class="muted" title="Filter already applied">{{ facet.0|title }} ({{ facet.1 }})</span>
+                                    {% endif %}
+                                </li>
+                            {% endwith %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    </ul>
+                {% endfor %}
+            </div>
+    {% endblock %}
 
     {% block content %}
-    <div class="row-fluid">
-        <div class="span10 search-results">
+        <h3>Data Catalog</h3>
+        <div class="search-results">
             {% for result in page.object_list %}
                 {{result.text|safe}}
             {% if not forloop.last %}<br />{% endif %}

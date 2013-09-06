@@ -23,13 +23,9 @@
     <form id="suggest_data_form" action="{% url 'suggest-create' %}" method="POST">
         {% csrf_token %}
         {% for field in form %}
-        <div class="row-fluid user-form">
-        	<div class="span2">
-        		{{field.label_tag}}
-        	</div>
-        	<div class="span8">
-        		{{field}}
-        	</div>
+        <div class="user-form">
+        	{{field.label_tag}}
+        	{{field}}
         </div>
         {% endfor %}
         

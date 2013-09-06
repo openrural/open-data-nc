@@ -32,6 +32,7 @@
 @import "../bootstrap/less/sprites";
 @import "../bootstrap/less/close";
 @import "../bootstrap/less/component-animations";
+@import "../bootstrap/less/labels-badges";
 
 // Components: Buttons & Alerts
 @import "../bootstrap/less/alerts";
@@ -117,13 +118,15 @@
 
 @font-face {
     font-family: 'open_sans_condensedbold';
-    src: url('../flat-ui/fonts/OpenSans-CondBold-webfont.eot');
-    src: url('../flat-ui/fonts/OpenSans-CondBold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../flat-ui/fonts/OpenSans-CondBold-webfont.woff') format('woff'),
-         url('../flat-ui/fonts/OpenSans-CondBold-webfont.ttf') format('truetype'),
-         url('../flat-ui/fonts/OpenSans-CondBold-webfont.svg#open_sans_condensedbold') format('svg');
-    font-weight: normal;
+    src: url('../flat-ui/fonts/opensans/OpenSans-CondBold-webfont.eot');
+    src: url('../flat-ui/fonts/opensans/OpenSans-CondBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../flat-ui/fonts/opensans/OpenSans-CondBold-webfont.woff') format('woff'),
+         url('../flat-ui/fonts/opensans/OpenSans-CondBold-webfont.ttf') format('truetype'),
+         url('../flat-ui/fonts/opensans/OpenSans-CondBold-webfont.svg') format('svg');
+    speak: none;
     font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
 }
 
 body {
@@ -150,7 +153,7 @@ hr {
     border-size: 2px;
 }
 
-h1 {
+h1, h4 {
     @media (max-width: 767px) {
         text-align: center;
     }
@@ -268,9 +271,12 @@ a {
 .gray-banner {
     background-color: @openGray;
     border-radius: 4px;
+    padding: 5px 0 5px 2px;
+    position: relative;
 
     h1, h4 {
         margin-left: 5px;
+        text-align: initial;
     }
 
     > div.span3.resource_image {
@@ -312,7 +318,7 @@ header {
     }
 
     #header_text {
-        font-size: 1.6em;
+        font-size: 1.2em;
         text-align: center;
         padding-left: 5%;
         @media (max-width: 767px) {
@@ -416,6 +422,7 @@ footer {
     h4 a {
         color: @white;
         font-weight: inherit;
+        line-height: 28px;
 
         &:hover {
             color: @white;
@@ -439,10 +446,12 @@ footer {
 
 /**** Input forms, buttons, site-wide ****/
     .row-fluid { 
+
         input[type="text"], input[type='password'], textarea, select  {
             background-color: @openGray;
+            border-radius: 6px;
             height: auto;
-            width: 95%;
+            width: 95% !important;
 
             &:focus, &:hover {
                 border-color: @blue;
@@ -450,12 +459,12 @@ footer {
 
             @media (max-width: 767px) {
                 width: 90% !important;
-                margin: 20px 10px 0;
             }
         }
 
         .btn {
             background-color: @grayDark;
+            padding-bottom: 9px;
 
             &:hover {
                     background-color: @blue;
@@ -464,16 +473,39 @@ footer {
             @media (max-width: 767px) {
                 width: 50%;
                 position: relative;
-                left: 25%;
+                //left: 25%;
                 margin: 20px 0 0;
             }
         }
 
-        @media (max-width: 767px) {
-            > .span2 label {
-                text-align: center;
+        .input-append {
+            width: 95%;
+            
+            > input {
+                border-radius: 6px 0 0 6px;
+            }
+
+            > button.btn {
+                padding-bottom: 9px;
+            } 
+
+            @media (max-width: 767px) {
+                button.btn {
+                    position: initial;
+                    width: initial;
+                }
+
+                > input {
+                    margin: 20px auto 0;
+                }
             }
         }
+
+        //@media (max-width: 767px) {
+          //  > .span2 label {
+            //    text-align: center;
+           // }
+       // }
     }
 
     .sidebar-title {
@@ -617,7 +649,7 @@ footer {
 /***** Search *****/
 
 .catalog div.search-tools {
-    padding: 0 10px 10px;
+    padding: 0 10px 10px 0;
     margin: 0 0 25px;
     border-radius: 6px;
     background-color: @openGray;
@@ -629,8 +661,9 @@ footer {
     }
 
     > ul {
+        display: inline-block;
         list-style: none;
-        display: inline-table;
+        vertical-align: top;
     }
 }
 
@@ -641,43 +674,29 @@ footer {
     }   
 }
 
+#reset-filters {
+    > span {
+        vertical-align: top;
+        margin: 0 5px 15px 0;
+    }
+}
+
 /****** Registration ******/
 
 body.registration {
     div.floating-box {
         margin: 5% auto 10% 2%;
-        width: 30em;
-        input[type='text'],
-        input[type='password'] {
-            width: 80%;
-        }
     }
 }
 
 /****** Suggest Data ******/
-
-    #url_suggest_form {
-        @media (min-width: 767px) {
-            input {
-                vertical-align: top;
-            
-                &:not(.btn) {
-                    width: 75%;
-                }
-
-                &.btn {
-                    margin-left: 25px;
-                }
-            }
-        }
-    }
 
     .sharing_tools {
         h3 {
             #latest_resources_title;
         }
 
-        @media (max-width: 767px) {
+        @media (max-width: 1000px) {
             h3 { display: inline-block; margin-top: 25px; }
             hr { .hidden; }
         }
@@ -689,22 +708,94 @@ body.registration {
         }
     }
 
+/****** Request Data ******/
+
+#results_info {
+    margin-bottom: 5px;
+
+    > div {
+        display: inline-block;
+    }
+
+    .sort_nomination {
+        float: right;
+        ul > li {
+            display: inline;
+            list-style: none;
+            text-align: right;
+        }
+    }
+}
+
+.requests {
+    > .request {
+        > .vote-or-login {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            text-align: right;
+    
+            > form input {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+
+                @media (max-width: 767px) {
+                    
+                    &.btn {
+                        width: 20%;
+                        left: 80%;
+                    }
+                }
+            }
+        }
+
+        > .votes {
+            > span {
+                color: @blue;
+                font-size: 1.4em;
+
+                &:first-of-type {
+                    font-size: 3.2em;
+                }
+            }
+        }
+    }
+}
+
+
 /****** Resource Detail ******/
 
 #content_resource {
     padding: 10px 0 25px 10px;
     margin-bottom: 15px;
 
+     @media (max-width: 767px) {
+        h4 {
+            text-align: center;
+        }
+     }
+
     .resource-image {
         position: relative;
         border: 2px solid @grayDark;
         width: 250px;
         height: 250px;
+
+        @media (max-width: 767px) {
+            margin: 0 auto;
+        }
     }
 
     .ribbonRight {
         width: 50%;
         left: -.1em;
+
+        @media (max-width: 767px) {
+            width: 50%;
+            left: -1.9em;
+            text-align: center;
+        }
     }
 
 }

@@ -5,6 +5,14 @@
 {% block body_id %}login{% endblock body_id %}
 {% block body_class %}registration{% endblock %}
 
+{% block extra-js %}
+<script>
+if($('#login').is(':visible')) {
+        $('.form-search').hide();
+    }
+</script>
+{% endblock extra-js %}
+
 {% block messages %}
     {{ block.super }}
     {% if form.errors %}
@@ -13,7 +21,7 @@
 {% endblock messages %}
 
 {% block content %}
-<div class="floating-box">
+<div id="login" class="floating-box">
     <h1>Log in</h1>
     <form method="post" action="{% url "auth_login" %}">
         {% csrf_token %}

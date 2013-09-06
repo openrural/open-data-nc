@@ -2,7 +2,8 @@
 {% load widget_tweaks facet_tags thumbnail recent_resources %}
 
 {%block extra-js%}
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
 {% endblock extra-js %}
 
 {% block content %}
@@ -15,12 +16,11 @@
 	    <div id="featured_projects_window">
             {% for img in feature_images %}
                 <div class="{% if not forloop.first %}hide{% endif %}">
-                {% thumbnail img.image "869x400" crop="center" as im %}
-                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
-                {% endthumbnail %}
-
+                	{% thumbnail img.image "600x400" crop="center" as im %}
+                    	<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
+                	{% endthumbnail %}
                     <h2 class="ribbonRight">
-                        <a href="{{ img.get_absolute_url }}">{{ img.resource.name }}</a>
+                        <a href="{{ img.resource.get_absolute_url }}">{{ img.resource.name }}</a>
                     </h2>
                 </div>
 			{% endfor %}
@@ -45,7 +45,7 @@
 				<thead>
 					<tr>
 						<th data-class="expand">Item</th>
-						<th data-hide="phone, tablet">Date Created</th>
+						<th data-hide="phone, tablet">Created</th>
 						<th>County</th>
 						<th>Format</th>
 						<th data-hide="phone, tablet">Type</th>
@@ -66,8 +66,8 @@
 		</div><!-- /table-wrapper -->
 	</div>
 	<div class="span3">
-		<h1 class="twitter_header">Twitten by Open N.C.</h1>
-		<a class="twitter-timeline" href="https://twitter.com/OpenNC" data-widget-id="269466275074424832" data-theme="light" data-link-color="#29abe2" data-chrome="noscrollbar noborders noheader nofooter" data-related="twitterapi,twitter" data-aria-polite="assertive" width="100%" height="370" lang="EN">Tweets by @OpenNC</a>
+		<h1 class="twitter_header">Open N.C. Tweets</h1>
+		<a class="twitter-timeline" href="https://twitter.com/OpenNC" data-widget-id="373147868539805696" data-theme="light" data-link-color="#29abe2" data-chrome="noscrollbar noborders noheader nofooter">Tweets by @OpenNC</a>
 	</div>
 </div>
 {% endblock %}

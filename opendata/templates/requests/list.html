@@ -32,7 +32,10 @@
     <h2>Current Requests</h2>
     <div id="search-requests" class="search">
         <form method='GET' action='.'>
-            {{ form.text|attr:"placeholder:Search requests..." }}
+            <div class="input-append">
+                {{ form.text|attr:"placeholder:Search requests..." }}
+                <button class="btn"><i class="icon-search icon-white"></i></button>
+            </div>
         </form>
     </div>
 
@@ -41,7 +44,8 @@
             <div id="count">{{results.count}} RESULTS</div>
             <div id="sort" class="sort_nomination">
                 <ul>
-                    <li id="sort_rating_score">{% anchor rating_score Votes %}</li>
+                    <li>Sort by:</li>
+                    <li id="sort_rating_score">{% anchor rating_score Votes %} <span class="accent">|</span> </li>
                     <li id="sort_suggested_date">{% anchor date Date %}</li>
                 </ul>
             </div>
@@ -49,19 +53,20 @@
     </div>
 {% autosort requests %}
 {% autopaginate requests 6 %}
-    <div class="requests">
+        <div class="requests">
     {% for object in requests %}
         {% rating_by_request request on object.rating as vote %}
         <div class="row-fluid gray-banner request">
             <div class="span3 resource_image votes">
-                {{ object.rating_votes }} vote{% if object.rating_votes != 1 %}s{% endif %}
+                <span>{{ object.rating_votes }}</span><br><span>vote{% if object.rating_votes != 1 %}s{% endif %}</span>
             </div>
-            <div class="span6">
+            <div class="span6 request-details">
                 <h3 class="nom_text">{{ object }}</h3>
                 <div class="nom_byline">
                     By <strong>{{ object.suggested_by }}</strong> on <strong>{{ object.suggested_date|date:"SHORT_DATE_FORMAT" }}</strong>
                 </div>
             </div>
+            <div class="span3 vote-or-login">
             {% if not s.completed %}
                 {% if user.is_authenticated %}
                     {% if vote %}
@@ -84,8 +89,9 @@
             {% else %}
                 <div id="closed">Nomination Closed</div>
             {% endif %}
+            </div>
         </div>
-    </div>
+        <br>
     {% empty %}
         <div class="resource">No nominations yet! What would you like to see added to this site?</div>
     {% endfor %}
