@@ -1,3 +1,4 @@
+import math
 import os
 # from lxml import etree
 # from shapely.wkt import loads
@@ -222,6 +223,10 @@ class Resource(models.Model):
     def get_absolute_url(self):
         return reverse('catalog_resource_detail', kwargs={'pk': self.id, 'slug':
             self.slug})
+
+    def get_rating(self):
+        """Return instance raiting as an intiger"""
+        return math.floor(self.rating.get_rating())
 
     def __unicode__(self):
         return '%s' % self.name

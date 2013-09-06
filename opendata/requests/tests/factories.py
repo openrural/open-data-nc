@@ -15,5 +15,6 @@ class UserFactory(factory.DjangoModelFactory):
 class RequestFactory(factory.DjangoModelFactory):
     FACTORY_FOR = Request
 
+    status = Request.APPROVED
     suggested_by = factory.SubFactory(UserFactory)
     title = factory.Sequence(lambda n: 'suggestion%s' % n)

@@ -15,19 +15,18 @@
 {% endblock %}
 
 {% block content %}
-    {% scribble "request-data" %}
     <h1>Request Public Data</h1>
     <div class="gray-card">
+        {% scribble "request-data" %}
         <p>Is there a public data set that a state, county, city or other government agency has created but that isn't publicly available online? Tell us about it here and we'll try to collect it and add it to the Open N.C. catalog for the public's use.</p>
 
         <p>Maybe you've seen a data set, but not in a format that follows the <a href="http://www.opengovdata.org/home/8principles">8 Principles of Open Government Data</a>. Or maybe you think an agency must be collecting and storing data on a topic, but you've not been able to get a copy of it. The best way to help make North Carolina government data more useful is to <a href="http://www.elon.edu/e-web/academics/communications/ncopengov/seekers/faq.xhtml">ask the government agency for help</a> and then <a href="http://open-nc.org/opendata/submit/">submit the data to our catalog</a> after you receive it. </p>
 
         <p>In the meanwhile, let us know what you're looking for. Other citizens are probably looking for the same thing. Once we approve each request we will make them public so that we can help connect you with other people looking for similar information in their hometowns.</p>
-
+        {% endscribble %}
         <a href="{% url 'request-create' %}" class="btn">Request Data</a>
     </div>
 
-    {% endscribble %}
 
     <h2>Current Requests</h2>
     <div id="search-requests" class="search">
@@ -46,7 +45,7 @@
                 <ul>
                     <li>Sort by:</li>
                     <li id="sort_rating_score">{% anchor rating_score Votes %} <span class="accent">|</span> </li>
-                    <li id="sort_suggested_date">{% anchor date Date %}</li>
+                    <li id="sort_suggested_date">{% anchor suggested_date Date %}</li>
                 </ul>
             </div>
         </div>
@@ -58,12 +57,12 @@
         {% rating_by_request request on object.rating as vote %}
         <div class="row-fluid gray-banner request">
             <div class="span3 resource_image votes">
-                <span>{{ object.rating_votes }}</span><br><span>vote{% if object.rating_votes != 1 %}s{% endif %}</span>
+                <span>{{ object.rating_votes }}</span><br><span>vote{{object.rating_votes|pluralize}}</span>
             </div>
             <div class="span6 request-details">
                 <h3 class="nom_text">{{ object }}</h3>
                 <div class="nom_byline">
-                    By <strong>{{ object.suggested_by }}</strong> on <strong>{{ object.suggested_date|date:"SHORT_DATE_FORMAT" }}</strong>
+                    By <strong>{{ object.suggested_by }}</strong> on <strong>{{ object.date }}</strong>
                 </div>
             </div>
             <div class="span3 vote-or-login">

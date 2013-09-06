@@ -9,8 +9,8 @@ from .forms import SearchForm, RequestForm
 
 
 def list_requests(request):
-    "List current requests"
-    requests = Request.objects.order_by("-rating_score")
+    """List current requests"""
+    requests = Request.objects.filter(status=Request.APPROVED).order_by("-rating_score")
     if request.method == 'GET':
         form = SearchForm(request.GET)
         if form.is_valid():
@@ -27,7 +27,7 @@ def list_requests(request):
 
 @login_required
 def add_request(request):
-    "Add new requests"
+    """Add new requests"""
     if request.method == 'POST':
         form = RequestForm(request.POST)
         if form.is_valid():
@@ -48,7 +48,7 @@ def add_request(request):
 @login_required
 @require_POST
 def vote(request, request_id):
-    "Vote for a requests"
+    """Vote for a requests"""
     request_object = get_object_or_404(Request, pk=request_id)
     voted = request_object.rating.get_rating_for_user(request.user,
                                               request.META['REMOTE_ADDR'])
@@ -61,7 +61,7 @@ def vote(request, request_id):
 @login_required
 @require_POST
 def remove_vote(request, request_id):
-    "Remove pre-existing vote for requests"
+    """Remove pre-existing vote for requests"""
     request_object = get_object_or_404(Request, pk=request_id)
     try:
         request_object.rating.delete(request.user, request.META['REMOTE_ADDR'])

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load widget_tweaks comments %}
+{% load widget_tweaks comments thumbnail %}
 
 {% block title %}{{ object|title }}{% endblock title %}
 {% block body_id %}resource-detail{% endblock body_id %}
@@ -55,7 +55,16 @@
 
   <div id="content_resource" class="tab_container gray-card">
     <div class="row-fluid">
-      <div class="span4 pull-right"><div class="resource-image">img</div><h2 class="ribbonRight"><a id="share-data">Share data</a></h2></div>
+      <div class="span4 pull-right">
+          <div class="resource-image">
+            {% thumbnail resource.get_first_image.image "254x254" crop="center" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
+            {% empty %}
+                Default image needs to go here.
+            {% endthumbnail %}
+          </div>
+          <h2 class="ribbonRight"><a id="share-data">Share data</a></h2>
+      </div>
       <div class="span8">
         {% if perms.opendata.change_resource %}
             <div id="admin_link"><a href="{{SITE_ROOT}}/_admin_/opendata/resource/{{resource.id}}" target="_blank">Edit</a></div>

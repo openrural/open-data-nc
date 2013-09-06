@@ -28,7 +28,7 @@ HELP = {
 FIELDS = {
     'url': 'What is the URL web address of the best version of this data set '
            'available on any government website? If the data is not available '
-           'on any government websites, please type "None',
+           'on any government websites, please leave blank.',
     'relevance': 'Why is this data interesting and important?',
     'data_format': 'In what format is this data?',
     'agency_name': 'What is the name of the agency that created the record?',

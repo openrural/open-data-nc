@@ -1,11 +1,18 @@
+{% load thumbnail ratings %}
+
 <div class="row-fluid gray-banner">
     <div class="span3 resource_image">
+        {% thumbnail object.get_first_image.image "96x96" crop="center" as im %}
+            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
+        {% empty %}
+            Default image needs to go here.
+        {% endthumbnail %}
 	    <div id="rating">
-			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 1 %}checked{% endif %}/>
-			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 2 %}checked{% endif %}/>
-			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 3 %}checked{% endif %}/>
-			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 4 %}checked{% endif %}/>
-			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 5 %}checked{% endif %}/>
+			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if object.get_rating == 1 %}checked{% endif %}/>
+			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if object.get_rating == 2 %}checked{% endif %}/>
+			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if object.get_rating == 3 %}checked{% endif %}/>
+			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if object.get_rating == 4 %}checked{% endif %}/>
+			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if object.get_rating == 5 %}checked{% endif %}/>
 	    </div>
     </div>
     <div class="span6">

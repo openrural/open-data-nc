@@ -30,7 +30,7 @@ class RequestForm(forms.ModelForm):
 
     class Meta:
         model = Request
-        exclude = ('suggested_by', 'resources', 'rating')
+        exclude = ('suggested_by', 'resources', 'rating', 'status', )
 
     class Media:
         js = (
