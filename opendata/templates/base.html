@@ -5,7 +5,7 @@
 <html lang="en" class="no-js">
 <head>
     <meta charset="utf-8">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %} | Open N.C.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{% block meta-description %}{% endblock %}">
     <meta name="author" content="{% block meta-author %}{% endblock %}">
@@ -75,8 +75,8 @@
                                 </div>
                                 <hr>
                                 <div id="goto_suggest_data">
-                                    <a href="{% url 'suggest-page' %}"><h3 class="mobile_border">Suggest Data</h3></a>
-                                    <p>Know of some data we don't have? Please suggest it here so we can add it to our collection.</p>
+                                    <a href="{% url 'suggest-page' %}"><h3 class="mobile_border">Submit Data</h3></a>
+                                    <p>Do you have public data we don't have? Please submit a link to it here so we can add it to our collection.</p>
                                 </div>  
                                 <hr>
                                 <div id="goto_request_data">
@@ -149,6 +149,20 @@
     <script charset="utf-8" src="{{ STATIC_URL }}js/site.js"></script>
     {% endcompress %}
     {% endblock js %}
-    {% block extra-js %}{% endblock extra-js %}
+    {% block extra-js %}
+    <script>
+        var x = $(window).width();
+        if( x>769 ) {
+            $('nav a').hover(function(){
+                if ($(this).next().is(':hidden')){
+                    $(this).next().slideDown(300);
+                } else {
+                    $(this).next().slideUp(300);
+                }
+            });
+        }
+    </script>
+
+    {% endblock extra-js %}
 </body>
 </html>

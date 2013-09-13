@@ -10,7 +10,7 @@
 <meta property="og:url" content="{{ site_url }}{{ object.get_absolute_url }}"/>
 <meta property="og:image" content=""/>
 <meta property="og:locale" content="en_US" />
-<meta property="og:site_name" content="Open Data NC"/>
+<meta property="og:site_name" content="Open N.C."/>
 {% endblock %}
 
 {% block extra-css %}
@@ -38,9 +38,13 @@
       js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1406142562935221";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
+
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://open-nc.org{{ object.get_absolute_url }}" data-text="Check out this public data that @openNC helped make public: {{ object.name|safe }} #opengov #ddj">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+      
    
-    <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  
     <div class="fb-like" data-href="{{ request.location }}" data-width="450" data-show-faces="true" data-send="true"></div>
 </div>
 
@@ -53,15 +57,14 @@
             {% thumbnail resource.get_first_image.image "254x254" crop="center" as im %}
                 <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
             {% empty %}
-                Default image needs to go here.
+                <h1 class="no-image">No Image</h1>
             {% endthumbnail %}
           </div>
-          <h2 class="ribbonRight"><a id="share-data">Share data</a></h2>
       </div>
       <div class="span8">
-        {% if perms.opendata.change_resource %}
+        <!-- {% if perms.opendata.change_resource %}
             <div id="admin_link"><a href="{{SITE_ROOT}}/_admin_/opendata/resource/{{resource.id}}" target="_blank">Edit</a></div>
-        {% endif %}
+        {% endif %} -->
         <!-- <ul class="tab_header">
           <li class="tab_button"><a href="#tab_basic_info" onclick="odp.trackEvent('Resource Data', 'View Basic Info', 'Resource', {{resource.id}});return false;">BASIC INFO</a></li>
           <li class="tab_button"><a href="#tab_extra_info" onclick="odp.trackEvent('Resource Data', 'View All Info', 'Resource', {{resource.id}});return false;">ALL INFO</a></li>
@@ -103,86 +106,111 @@
     </div> -->
     
 
-    <div class="tab_body" id="tab_extra_info">
-	  <div id="tab_data">
-		{% if resource.organization %}
-		<div class="info_label">Organization: <span class="info_data"><a href="{{SITE_ROOT}}/opendata/search/?qs={{resource.organization}}" onclick="odp.trackEvent('Search Link', 'Resource Organization', 'Resource', {{resource.id}})">{{resource.organization}}</a></span></div>
-		{% endif %}
-		{% if resource.division %}
-		<div class="info_label">Division: <span class="info_data"><a href="{{SITE_ROOT}}/opendata/search/?qs={{resource.division}}" onclick="odp.trackEvent('Search Link', 'Resource Division', 'Resource', {{resource.id}})">{{resource.division}}</a></span></div>
-		{% endif %}
-		{% if resource.release_date %}
-		<div class="info_label">Release Date: <span class="info_data">{{ resource.release_date }}</a></span></div>
-		{% endif %}
-		{% if resource.time_period %}
-		<div class="info_label">Valid Time Period: <span class="info_data">{{resource.time_period}}</span></div>
-		{% endif %}
-		{% if resource.data_types.all.count > 0 %}
-		<div class="info_label">Data Types: 
-		  <span class="info_data">
-  			{% for dt in resource.data_types.all %}
-  				{{dt}}{% if not forloop.last %}, {% endif %}
-  			{% endfor %}
-      </span>
-		</div>
-		{% endif %}
-		<div class="info_label">Categories: 
-		<span class="info_data">
-		  {% for tag in resource.tags.all %}
-			<a href="{{SITE_ROOT}}/opendata/tag/{{tag.id}}" onclick="odp.trackEvent('Search Link', 'Resource Tag', 'Tag', '{{tag}}')">{{tag}}</a>{% if not forloop.last %}, {% endif %}
-		  {% endfor %}
-      </span>
-		</div>
-		<div class="info_label">Usage: <span class="info_data accent">{{resource.usage}}</span></div>
-		<!-- <div class="info_label">Description</div><div class="info_data">{{resource.description|safe}}</div> -->
-		{% if resource.updates %}
-			<div class="info_label">Update Frequency: <span class="info_data accent">{{resource.updates}}</span></div>
-		{% endif %}
-		{% if resource.area_of_interest %}
-			<div class="info_label">Area of Interest: <span class="info_data">{{resource.area_of_interest}}</span></div>
-		{% endif %}
-		{% if resource.coord_sys.all.count > 0 %}
-			<div class="info_label">Coordinate Systems: 
-        <span class="info_data">
-				  {% for cs in resource.coord_sys.all %}
-					{{cs}}{% if not forloop.last %}, {% endif %}
-				  {% endfor %}
-        </span>
-			</div>
-		{% endif %}
-		{% if resource.contact_phone %}
-			<div class="info_label">Contact Phone: <span class="info_data">{{resource.contact_phone}}</a></span></div>
-		{% endif %}
-		{% if resource.contact_email %}
-			<div class="info_label">Contact Email: <span class="info_data"><a href="mailto:{{resource.contact_email}}" target="_blank" onclick="odp.trackEvent('External Link', 'Resource Email', 'Email', '{{resource.contact_email}}')">{{resource.contact_email}}</a></span></div>
-		{% endif %}
-		{% if resource.contact_url %}
-			<div class="info_label">Contact Url: <span class="info_data"><a href="{{resource.contact_url}}" target="_blank" onclick="odp.trackEvent('External Link', 'Resource Contact Url', 'Url', '{{resource.contact_url}}')">{{resource.contact_url}}</a></span></div>
-		{% endif %}
-        <div class="info_label">Date Added: <span class="info_data accent">{{resource.created}}</span></div>
-        <div class="info_label">Last Update: <span class="info_data accent">{{resource.last_updated}}</span></div>
-	  </div>
-	  <div class="clear_left"></div>
-    </div>
-    </div>
-    
-    </div>
+        <div class="tab_body" id="tab_extra_info">
+          <div id="tab_data">
+            {% if resource.organization %}
+              <div class="info_label">Organization</div>
+              <div class="info_data"><a href="{{SITE_ROOT}}/opendata/search/?qs={{resource.organization}}" onclick="odp.trackEvent('Search Link', 'Resource Organization', 'Resource', {{resource.id}})">{{resource.organization}}</a></div>
+              <br>
+            {% endif %}
+            {% if resource.division %}
+              <div class="info_label">Division</div>
+              <div class="info_data"><a href="{{SITE_ROOT}}/opendata/search/?qs={{resource.division}}" onclick="odp.trackEvent('Search Link', 'Resource Division', 'Resource', {{resource.id}})">{{resource.division}}</a></div>
+              <br>
+            {% endif %}
+            {% if resource.release_date %}
+              <div class="info_label">Release Date</div>
+              <div class="info_data">{{ resource.release_date }}</a></div>
+              <br>
+            {% endif %}
+            {% if resource.time_period %}
+              <div class="info_label">Valid Time Period</div>
+              <div class="info_data">{{resource.time_period}}</div>
+              <br>
+            {% endif %}
+            {% if resource.data_types.all.count > 0 %}
+              <div class="info_label">Data Types</div>
+              <div class="info_data">
+                {% for dt in resource.data_types.all %}
+                  {{dt}}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+              </div>
+              <br>
+            {% endif %}
+            <div class="info_label">Categories</div>
+            <div class="info_data">
+              {% for tag in resource.tags.all %}
+                <a href="{{SITE_ROOT}}/opendata/tag/{{tag.id}}" onclick="odp.trackEvent('Search Link', 'Resource Tag', 'Tag', '{{tag}}')">{{tag}}</a>{% if not forloop.last %}, {% endif %}
+              {% endfor %}
+            </div>
+            <br>
+            {% if resource.usage %}
+              <div class="info_label">Usage</div>
+              <div class="info_data">{{resource.usage}}</div>
+            {% endif %}
+            {% if resource.updates %}
+              <div class="info_label">Update Frequency</div>
+              <div class="info_data">{{resource.updates}}</div>
+              <br>
+            {% endif %}
+            {% if resource.area_of_interest %}
+              <div class="info_label">Area of Interest</div>
+              <div class="info_data">{{resource.area_of_interest}}</div>
+              <br>
+            {% endif %}
+            {% if resource.coord_sys.all.count > 0 %}
+              <div class="info_label">Coordinate Systems</div>
+              <div class="info_data">
+                {% for cs in resource.coord_sys.all %}
+                  {{cs}}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+              </div>
+              <br>
+            {% endif %}
+            {% if resource.contact_phone %}
+              <div class="info_label">Contact Phone</div>
+              <div class="info_data">{{resource.contact_phone}}</div>
+              <br>
+            {% endif %}
+            {% if resource.contact_email %}
+              <div class="info_label">Contact Email</div>
+              <div class="info_data"><a href="mailto:{{resource.contact_email}}" target="_blank" onclick="odp.trackEvent('External Link', 'Resource Email', 'Email', '{{resource.contact_email}}')">{{resource.contact_email}}</a></div>
+              <br>
+            {% endif %}
+            {% if resource.contact_url %}
+              <div class="info_label">Contact Url</div>
+              <div class="info_data"><a href="{{resource.contact_url}}" target="_blank" onclick="odp.trackEvent('External Link', 'Resource Contact Url', 'Url', '{{resource.contact_url}}')">{{resource.contact_url}}</a></div>
+              <br>
+            {% endif %}
+            <div class="info_label">Date Added</div>
+            <div class="info_data">{{resource.created}}</div>
+            <br>
+            <div class="info_label">Last Update</div>
+            <div class="info_data">{{resource.last_updated}}</div>
+          </div>
+        <!-- <div class="clear_left"></div> -->
+        </div> <!-- /tab_data -->
+      </div> <!-- /span8 -->
+
+    </div> <!-- /row -->
     <div class="row-fluid">
-      <div class="span12">
+      <div class="span4 pull-right">
+        <!-- Empty div used to match margin from row above -->
+      </div>
+      <div class="span8">
         <div class="info_label">Description: </div>
-        <br>
         <div class="info_data">{{resource.description|safe}}</div>
       </div>
     </div>
 
-  </div>
+    </div>
 
 
   <div class="tab_container" id="content_data">
-    <ul class="tab_header">
+    <!-- <ul class="tab_header">
       <li class="tab_button"><a href="#tab_data" onclick="odp.trackEvent('Resource Data', 'Data', 'Resource', {{resource.id}});return false;">DATA</a></li>
       <li class="tab_button"><a href="#tab_metadata" onclick="odp.trackEvent('Resource Data', 'Metadata', 'Resource', {{resource.id}});return false;">METADATA</a></li>
-    </ul>
+    </ul> -->
     <div class="tab_body" id="tab_data">
     {% if resource.get_grouped_urls.Data %}
       <div class="data_block">
@@ -240,9 +268,6 @@
   </div>
 
   <div class="tab_container" id="content_ratings">
-    <ul class="tab_header">
-      <li class="tab_button"><a href="#ratings-tab">RATINGS/COMMENTS</a></li>
-    </ul>
     <div class="tab_body" id="ratings-tab">
       <div id="social_meta">
         <h3 id="avg_rating">Average Rating</h3>

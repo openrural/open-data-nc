@@ -19,11 +19,11 @@ $(document).ready(function(){
 
    $('nav a').each(function(){
       if ($(this).attr('href') == window.location.pathname){
-         $(this).find('h1').css('color', '#333');
+         $(this).find('h3').css('color', '#333');
       };
    });
 
-   var noShow = ['#login', '#logout', '#registration', '#search-requests', '#url-suggest-form', '#request-form', '#submit-form']
+   var noShow = ['#login', '#logout', '#registration', '#search-requests', '#url-suggest-form', '#request-form', '#submit-form'];
 
    for(var i=0; i<noShow.length; i++) {
       if($(noShow[i]).is(':visible')) {

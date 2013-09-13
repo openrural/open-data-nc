@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load widget_tweaks comments scribbler_tags %}
 
-{% block title %}{{ object|title }}{% endblock title %}
+{% block title %}Submit Data{% endblock title %}
 {% block body_id %}resource-detail{% endblock body_id %}
 {% block body_class %}catalog{% endblock body_class %}
 
@@ -10,7 +10,7 @@
 <meta property="og:url" content="{{ site_url }}{{ object.get_absolute_url }}"/>
 <meta property="og:image" content=""/>
 <meta property="og:locale" content="en_US" />
-<meta property="og:site_name" content="Open Data NC"/>
+<meta property="og:site_name" content="Open N.C."/>
 {% endblock %}
 
 {% block extra-css %}
@@ -42,23 +42,6 @@
 	</p>
 
 	<p>
-	Ideally, the data you want to share is already public on a government website.
-	If it is, please post here the URL that points directly to the dataset.
-	</p>
-    {% endscribble %}
-
-	<br>
-
-	
-	<form id="url-suggest-form" action="{% url 'suggest-create' %}" method='get'>
-		<div class="input-append">
-		    {{ form.url|attr:'placeholder:URL...' }}
-		    <button class="btn">Go</button>
-	    </div>
-	</form>
-
-    {% scribble "share-page-2" %}
-	<p>
 	If the data is not already online, there are several ways you can help put it
 	online. Remember, though, that the more disconnected data becomes from its
 	original source the less it adheres to the 8 Principles of Open Government
@@ -67,6 +50,23 @@
 	included in the catalog.
 	</p>
     {% endscribble %}
+
+	<br>
+
+	{% scribble "share-page-2" %}
+	<p>
+	Ideally, the data you want to share is already public on a government website.
+	If it is, please post here the URL that points directly to the dataset.
+	</p>
+	{% endscribble %}
+	
+	<form id="url-suggest-form" action="{% url 'suggest-create' %}" method='get'>
+		<div class="input-append">
+		    {{ form.url|attr:'placeholder:URL...' }}
+		    <button class="btn">Go</button>
+	    </div>
+	</form>
+    
 </div>
 
 {% scribble "share-page-2" %}

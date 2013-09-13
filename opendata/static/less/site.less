@@ -217,7 +217,7 @@ a {
             border-style: solid;
         }
 
-        > a:hover {
+        > a {
             color: @grayDark;
         }
 
@@ -370,27 +370,20 @@ header {
 }
 
 nav {
-    margin-top: 32px;
+    margin-top: 65px;
 
     h3 {
         display: inline;
     }
 
-    a {
-        color: @grayDark;
-
-        &:hover {
-            + p {
-                .show;
-            }
-        }
-    }
-
     p {
         .hide;
-
         margin: 0;
         width: 75%;
+    }
+
+    a {
+        color: @grayDark;
     }
 
     @media (max-width: 767px) {
@@ -414,7 +407,7 @@ nav {
             }
         }    
 
-        hr, p, .accent {
+        hr, .accent {
             .hidden;
         }
     }
@@ -567,11 +560,11 @@ footer {
 
 #latest_resources_title {
     text-align: right;
-    border-right: 2px @blue solid;
+    border-right: 1px @openGrayDark solid;
     padding: 5px;
 
     @media (max-width: 767px) {
-        border: 2px solid @blue;
+        border: 1px solid @openGrayDark;
         border-style: solid none;
         text-align: center;
         margin-bottom: 25px;
@@ -678,6 +671,10 @@ footer {
         display: inline-block;
         list-style: none;
         vertical-align: top;
+
+        > a.show-more {
+             color: @grayDark;
+        }
     }
 }
 
@@ -710,9 +707,15 @@ body.registration {
             #latest_resources_title;
         }
 
+        hr {
+            border-color: @openGrayDark;
+        }
+
         @media (max-width: 1000px) {
-            h3 { display: inline-block; margin-top: 25px; }
-            hr { .hidden; }
+            h3 { 
+                display: inline-block; 
+                border: none;
+            }
         }
     }
 
@@ -798,6 +801,14 @@ body.registration {
 
         @media (max-width: 767px) {
             margin: 0 auto;
+            margin-bottom: 25px;
+        }
+
+        > h1.no-image {
+            font-size: 72px;
+            line-height: 100px;
+            text-align: center;
+            text-transform: uppercase;
         }
     }
 
@@ -812,6 +823,10 @@ body.registration {
         }
     }
 
+}
+
+.info_label {
+    font-weight: bold;
 }
 
 .user-form {

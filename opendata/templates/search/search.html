@@ -17,30 +17,22 @@
     <script src="{{ STATIC_URL }}selectable/js/jquery.dj.selectable.js"></script>
     <script src="{{ STATIC_URL }}js/selectable.js"></script>
     <script>
-        // if ($('#refine-results').is(':visible')) {
-        //     $('#goto_find_data p').toggleClass('hidden');
-        // } 
-
         $('ul').each(function(){
             var ul = $(this);
             var count_li = ul.find('li').size();
-            if(count_li > 5) {
-                ul.find('li:gt(4)').hide().end()
-                .append($('<li class="show-more"><a class="accent">Show More...</a></li>'));
-            }
+            if(count_li > 5) { 
+            $(this).children('li:gt(4)').hide();
+            $(this).append($('<a class="show-more" href="javascript:void(0);">Show More...</a>'));
+        }
         });
-
+    
         $('.show-more').click(function(e){
             e.preventDefault();
-            console.log('hi');
-            $(this).siblings(':hidden').fadeIn('slow').end().replaceWith($('<li class="show-less"><a class="accent">Show Less</a></li>').fadeIn('slow'));
-        });
-
-        $('.show-less').click(function(){
-            console.log(this);
-            $(this).remove();
-            $(this).parent('ul').find('li:gt(4)').hide().end()
-                    .append($('<li class="show-more"><a class="accent">Show More...</a></li>'));
+            $(this).parent('ul').children('li:gt(4)').stop(true,true).slideToggle();
+            $('ul').not($(this).parent('ul')).each(function(){
+                  $(this).children('li:gt(4)').hide();
+            });
+            $(this).text($(this).text() == "Show Less" ? "Show More..." : "Show Less");
         });
     </script>
 {% endblock extra-js %}
@@ -97,7 +89,7 @@
                 {% for field, facets in facets.fields.items %}
                     {% if facets %}
                     <ul class="filters">
-                        <h5 class="filter_title"><a href="#">By {{ field }}</a></h5>
+                        <h6 id="filter_title">By {{ field }}</h6>
                         {% for facet in facets %}
                             {% if facet.1 %}
                             {% with path=request.get_full_path %}
