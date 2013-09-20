@@ -1,6 +1,6 @@
 psycopg2==2.5
 Pillow==2.0.0
-Django==1.5.1
+Django==1.5.4
 South==0.8.1
 six==1.3.0
 BeautifulSoup==3.2.1
