@@ -85,7 +85,7 @@
             <div class="info_label">Valid Time PeriodL <span class="info_data">{{resource.time_period}}</span></div>
             {% endif %}
             {% if resource.data_types.all.count > 0 %}
-            <div class="info_label">Data Types: 
+            <div class="info_label">Data Types:
               <span class="info_data">
               	{% for dt in resource.data_types.all %}
       		    	 {{dt}}{% if not forloop.last %}, {% endif %}
@@ -93,14 +93,14 @@
               </span>
             </div>
             {% endif %}
-            <div class="info_label">Categories: 
+            <div class="info_label">Categories:
             <span class="info_data">
               {% for tag in resource.tags.all %}
                 <a href="{{SITE_ROOT}}/opendata/tag/{{tag.id}}/?sort=name&dir=asc" onclick="odp.trackEvent('Search Link', 'Resource Tag', 'Tag', '{{tag}}')">{{tag}}</a>{% if not forloop.last %}, {% endif %}
               {% endfor %}
               </span>
             </div>
-        
+
       </div>
       <div class="clear"></div>
     </div> -->
@@ -120,7 +120,7 @@
             {% endif %}
             {% if resource.release_date %}
               <div class="info_label">Release Date</div>
-              <div class="info_data">{{ resource.release_date }}</a></div>
+              <div class="info_data">{{resource.release_date}}</div>
               <br>
             {% endif %}
             {% if resource.time_period %}
@@ -128,7 +128,16 @@
               <div class="info_data">{{resource.time_period}}</div>
               <br>
             {% endif %}
-            {% if resource.data_types.all.count > 0 %}
+            {% if resource.url_set.all %}
+              <div class="info_label">Resources</div>
+              <div class="info_data">
+                {% for url in resource.url_set.all %}
+                  <a href="{{url.url}}">{{url.url}}</a><br>
+                {% endfor %}
+              </div>
+              <br>
+            {% endif %}
+            {% if resource.data_types.all %}
               <div class="info_label">Data Types</div>
               <div class="info_data">
                 {% for dt in resource.data_types.all %}
@@ -158,7 +167,7 @@
               <div class="info_data">{{resource.area_of_interest}}</div>
               <br>
             {% endif %}
-            {% if resource.coord_sys.all.count > 0 %}
+            {% if resource.coord_sys.all %}
               <div class="info_label">Coordinate Systems</div>
               <div class="info_data">
                 {% for cs in resource.coord_sys.all %}
