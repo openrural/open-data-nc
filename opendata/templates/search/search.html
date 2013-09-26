@@ -122,10 +122,11 @@
             {% endfor %}
 
             {% if page.has_previous or page.has_next %}
-            <div>
-                {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
-                |
-                {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
+            <div class="pagination">
+                <ul>
+                    {% if page.has_previous %}<li><span><a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">&laquo; Previous</a></span></li>{% else %}<li class="disabled"><span>&laquo; Previous<span><li>{% endif %}</li>
+                    {% if page.has_next %}<li><a href="?q={{ query }}&amp;page={{ page.next_page_number }}">Next &raquo;</a></li>{% else %}<li class="disabled"><span>Next &raquo;</span></li>{% endif %}
+                </ul>
             </div>
             {% endif %}
         </div>

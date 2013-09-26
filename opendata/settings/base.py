@@ -214,6 +214,7 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 HAYSTACK_SIGNAL_PROCESSOR = 'opendata.search.index_processors.M2MRealtimeSignalProcessor'
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 5
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
