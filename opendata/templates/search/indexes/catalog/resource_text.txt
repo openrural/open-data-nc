@@ -5,7 +5,7 @@
         {% thumbnail object.get_first_image.image "96x96" crop="center" as im %}
             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
         {% empty %}
-            No image for data set
+            <h3 class="no-image">No Image</h3>
         {% endthumbnail %}
 	    <div id="rating">
 			<input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if object.get_rating == 1 %}checked{% endif %}/>

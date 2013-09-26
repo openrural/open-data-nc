@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load widget_tweaks facet_tags thumbnail recent_resources %}
 
+{% block title %}Home{% endblock %}
+
 {%block extra-js%}
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
@@ -13,7 +15,7 @@
 		<h3 class="ribbonLeft">
 	    	Featured Projects
 	    </h3>
-        {% for img in feature_images %}
+	    {% for img in feature_images %}
             <div class="{% if not forloop.first %}hide{% endif %}">
             	{% thumbnail img.image "600x400" crop="center" as im %}
                 	<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
@@ -43,7 +45,7 @@
 				<thead>
 					<tr>
 						<th data-class="expand">Item</th>
-						<th data-hide="phone, tablet">Created</th>
+						<th data-hide="phone, tablet">Updated</th>
 						<th>County</th>
 						<th>Format</th>
 						<th data-hide="phone, tablet">Type</th>
@@ -53,7 +55,7 @@
 					{% for r in latest_resources%}
 						<tr>
 							<td><a href="{{ r.get_absolute_url }}">{{ r.name }}</a></td>
-							<td>{{ r.created|date:"F j" }}</td>
+							<td>{{ r.last_updated|date:"m/d/y" }}</td>
 							<td>{{ r.counties.all.0.name }}</td>
 							<td>{{ r.url_types.all.0.name }}</td>
 							<td>{{ r.data_types.all.0.name|lower|capfirst }}</td>
@@ -65,7 +67,7 @@
 	</div>
 	<div class="span3">
 		<h1 class="twitter_header">Open N.C. Tweets</h1>
-		<a class="twitter-timeline" href="https://twitter.com/OpenNC" data-widget-id="373147868539805696" data-theme="light" data-link-color="#29abe2" data-chrome="noscrollbar noborders noheader nofooter">Tweets by @OpenNC</a>
+		<a class="twitter-timeline" href="https://twitter.com/OpenNC" data-widget-id="373147868539805696" data-theme="light" data-link-color="#29abe2" data-chrome="noborders noheader nofooter">Tweets by @OpenNC</a>
 	</div>
 </div>
 {% endblock %}

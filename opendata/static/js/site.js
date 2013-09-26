@@ -27,8 +27,10 @@ $(document).ready(function(){
 
    for(var i=0; i<noShow.length; i++) {
       if($(noShow[i]).is(':visible')) {
-           $('.form-search').hide();
-       }; 
+        $('.form-search').hide();
+      } else {
+        return false;
+      } 
     };
 });
 

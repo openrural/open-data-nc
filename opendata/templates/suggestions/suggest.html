@@ -49,17 +49,16 @@
 	the acquisition and publication processes aren't transparent will not be
 	included in the catalog.
 	</p>
-    {% endscribble %}
-
-	<br>
-
-	{% scribble "share-page-2" %}
+    
 	<p>
 	Ideally, the data you want to share is already public on a government website.
 	If it is, please post here the URL that points directly to the dataset.
 	</p>
+
 	{% endscribble %}
-	
+
+	<br>
+
 	<form id="url-suggest-form" action="{% url 'suggest-create' %}" method='get'>
 		<div class="input-append">
 		    {{ form.url|attr:'placeholder:URL...' }}
