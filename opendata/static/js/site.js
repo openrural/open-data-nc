@@ -11,7 +11,7 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 
 $(document).ready(function(){
 
-   $('.footable').footable();
+//   $('.footable').footable();
 
    if(!($('#user').is(':visible'))) {
       $('#logo_text').css('left', '2%');
