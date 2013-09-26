@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load widget_tweaks facet_tags %}
+{% load widget_tweaks facet_tags sorting_tags%}
 
 {% block title %}{{ model_type|default:"search result"|add:"s"|title }}{% endblock title %}
 {% block body_id %}search{% endblock body_id %}
@@ -114,6 +114,16 @@
     {% block content %}
         <h3>Data Catalog</h3>
         <div class="search-results">
+            <div id="results_info">
+                <div id="count">{{ page.paginator.count }} RESULTS</div>
+                <div id="sort" class="sort_nomination">
+                    <ul>
+                        <li>Sort by:</li>
+{#                        <li id="sort_rating_score">{% anchor rating_score "Rating Score" %} <span class="accent">|</span> </li>#}
+                        <li id="sort_suggested_date">{% anchor created Date %}</li>
+                    </ul>
+                </div>
+            </div>
             {% for result in page.object_list %}
                 {{result.text|safe}}
             {% if not forloop.last %}<br />{% endif %}
