@@ -146,13 +146,15 @@
               </div>
               <br>
             {% endif %}
-            <div class="info_label">Categories</div>
-            <div class="info_data">
-              {% for tag in resource.tags.all %}
-                <a href="{{SITE_ROOT}}/opendata/tag/{{tag.id}}" onclick="odp.trackEvent('Search Link', 'Resource Tag', 'Tag', '{{tag}}')">{{tag}}</a>{% if not forloop.last %}, {% endif %}
-              {% endfor %}
-            </div>
-            <br>
+            {% if resource.categories.all %}
+              <div class="info_label">Categories</div>
+              <div class="info_data">
+                {% for category in resource.categories.all %}
+                  <a href="{% url 'catalog_search' %}?q=&selected_facets=categories_exact:{{ category }}">{{category}}</a><br>
+                {% endfor %}
+              </div>
+              <br>
+            {% endif %}
             {% if resource.usage %}
               <div class="info_label">Usage</div>
               <div class="info_data">{{resource.usage}}</div>
