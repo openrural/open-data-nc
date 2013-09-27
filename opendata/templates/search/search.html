@@ -10,12 +10,12 @@
             href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/base/jquery-ui.css">
     <link type="text/css" media="all" rel="stylesheet"
             href="{{ STATIC_URL }}selectable/css/dj.selectable.css">
+    <link rel="stylesheet" type="text/css" media="all" href="{{ STATIC_URL }}rating/jquery.rating.css">
 {% endblock extra-css %}
 
 {% block extra-js %}
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
-    <script src="{{ STATIC_URL }}selectable/js/jquery.dj.selectable.js"></script>
-    <script src="{{ STATIC_URL }}js/selectable.js"></script>
+    <script charset="utf-8" src="/static/rating/jquery.rating.pack.js"></script>
     <script>
         $('ul').each(function(){
             var ul = $(this);
@@ -128,13 +128,13 @@
                 {{result.text|safe}}
             {% if not forloop.last %}<br />{% endif %}
             {% empty %}
-            <p>No results found.</p>
+                <p>No results found.</p>
             {% endfor %}
 
             {% if page.has_previous or page.has_next %}
             <div class="pagination">
                 <ul>
-                    {% if page.has_previous %}<li><span><a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">&laquo; Previous</a></span></li>{% else %}<li class="disabled"><span>&laquo; Previous<span><li>{% endif %}</li>
+                    {% if page.has_previous %}<li><a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">&laquo; Previous</a></li>{% else %}<li class="disabled"><span>&laquo; Previous<span><li>{% endif %}
                     {% if page.has_next %}<li><a href="?q={{ query }}&amp;page={{ page.next_page_number }}">Next &raquo;</a></li>{% else %}<li class="disabled"><span>Next &raquo;</span></li>{% endif %}
                 </ul>
             </div>

@@ -17,7 +17,7 @@
 	    </h3>
 	    {% for img in feature_images %}
             <div class="{% if not forloop.first %}hide{% endif %}">
-            	{% thumbnail img.image "600x400" crop="center" as im %}
+            	{% thumbnail img.image "869x450" crop="center" as im %}
                 	<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
             	{% endthumbnail %}
                 <h2 class="ribbonRight">
