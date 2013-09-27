@@ -153,21 +153,22 @@
     <script charset="utf-8" src="{{ STATIC_URL }}js/footable.js"></script>
     {{ form.media.js }}
     <script charset="utf-8" src="{{ STATIC_URL }}js/site.js"></script>
+    <script>
+        // shows/hides description of nav options
+        var x = $(window).width();
+        if( x > 769 ) {
+            $('nav a').hover(function(){
+                if ($(this).next('p').is(':hidden')){
+                    $(this).next('p').slideDown(300);
+                } else {
+                    $(this).next('p').slideUp(300);
+                }
+            })
+        };
+    </script>
     {% endcompress %}
     {% endblock js %}
     {% block extra-js %}
-    <script>
-        var x = $(window).width();
-        if( x>769 ) {
-            $('nav a').hover(function(){
-                if ($(this).next().is(':hidden')){
-                    $(this).next().slideDown(300);
-                } else {
-                    $(this).next().slideUp(300);
-                }
-            });
-        }
-    </script>
 
     {% endblock extra-js %}
 </body>

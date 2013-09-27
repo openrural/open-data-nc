@@ -23,7 +23,7 @@ $(document).ready(function(){
       };
    });
 
-   var noShow = ['#login', '#logout', '#registration', '#search-requests', '#url-suggest-form', '#request-form', '#submit-form'];
+   var noShow = ['#login-form', '#logout', '#registration', '#search-requests', '#url-suggest-form', '#request-form', '#submit-form'];
 
    for(var i=0; i<noShow.length; i++) {
       if($(noShow[i]).is(':visible')) {
