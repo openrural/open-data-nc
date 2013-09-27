@@ -15,13 +15,12 @@
 			{% else %}
 				<h5 id="user">Hi, <a class="accent">{{ user.username }}</a></h5>
 				<span class="accent hidden-phone"> | </span>
-			{% if user.is_staff %}
-				<span class="accent hidden-phone"> | </span>
-				<a href="{% url "admin:index" %}">Admin</a>
-			{% else %}
-				<a id="about" href="{% url 'about' %}">About Us</a>
-			{% endif %}
-				<span class="accent"> | </span>
+                {% if user.is_staff %}
+                    <a href="{% url "admin:index" %}">Admin</a>
+                    <span class="accent hidden-phone"> | </span>
+                {% else %}
+                    <a id="about" href="{% url 'about' %}">About Us</a>
+                {% endif %}
 				<a href="{% url "auth_logout" %}">Log Out</a>
 			{% endif %}
 	    </div>

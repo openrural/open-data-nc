@@ -14,8 +14,6 @@
 {% endblock extra-css %}
 
 {% block extra-js %}
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
-    <script charset="utf-8" src="/static/rating/jquery.rating.pack.js"></script>
     <script>
         $('ul').each(function(){
             var ul = $(this);
@@ -38,10 +36,10 @@
 {% endblock extra-js %}
 
 {% block form %}
-            
+
     <div class="row-fluid hidden-phone">
         <div class="span10">
-            <form class="form-search" method="get" action=".">
+            <form class="" method="get" action=".">
                 <div class="control-group input-append">
                     {{ form.q|attr:"placeholder:Search the data catalog..." }}
                     {% for facet in form.selected_facets %}
@@ -73,9 +71,9 @@
 
 {% endblock form_mobile %}
 
-{% block catalog_search %}
+{% block content %}
     <div id="refine-results">
-        <h3>Filters</h3>
+{#        <h3>Filters</h3>#}
             <div id="reset-filters">
                 {% if selected_facets %}
                 {% for field, filter in selected_facets %}
@@ -109,10 +107,8 @@
                     </ul>
                 {% endfor %}
             </div>
-    {% endblock %}
 
-    {% block content %}
-        <h3>Data Catalog</h3>
+{#        <h3>Data Catalog</h3>#}
         <div class="search-results">
             <div id="results_info">
                 <div id="count">{{ page.paginator.count }} RESULTS</div>
@@ -141,7 +137,6 @@
             {% endif %}
         </div>
     </div>
-</div></div> <!-- /span9 & /row-fluid from base -->
 {% endblock %}
 
 

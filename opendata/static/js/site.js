@@ -13,15 +13,26 @@ $(document).ready(function(){
 
   $('.footable').footable(); //plugin for home page table to collapse on mobile
 
-  if(!($('#user').is(':visible'))) {
-    $('#logo_text').css('left', '2%');
-  };
-
-  $('nav a').each(function(){
-    if ($(this).attr('href') == window.location.pathname){
-       $(this).find('h3').css('color', '#333');
+    if(!($('#user').is(':visible'))) {
+        $('#logo_mobile').css('left', '2%');
     };
-  });
+
+    $('nav a').each(function(){
+      if ($(this).attr('href') == window.location.pathname){
+         $(this).find('h3').css('color', '#333');
+      };
+    });
+
+    var x = $(window).width();
+    if( x>769 ) {
+        $('nav a').hover(function(){
+            if ($(this).next().is(':hidden')){
+                $(this).next().slideDown(300);
+            } else {
+                $(this).next().slideUp(300);
+            }
+        });
+    }
 
   var noShow = ['#login-form', '#logout', '#registration', '#search-requests', '#url-suggest-form', '#request-form', '#submit-form'];
 
