@@ -6,7 +6,9 @@ from .models import Resource
 class ResourceIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.NgramField(document=True, use_template=True)
     name = indexes.CharField(model_attr='name')
+    created = indexes.DateTimeField(model_attr="created")
     data_types = indexes.MultiValueField(faceted=True)
+    score = indexes.DecimalField(model_attr="rating")
     categories = indexes.MultiValueField(faceted=True)
     cities = indexes.MultiValueField(faceted=True)
     counties = indexes.MultiValueField(faceted=True)
@@ -16,6 +18,9 @@ class ResourceIndex(indexes.SearchIndex, indexes.Indexable):
 
     def index_queryset(self, using=None):
         return self.get_model().objects.all()
+
+    def prepare_score(self, obj):
+        return obj.rating_score
 
     def prepare_categories(self, obj):
         return [category.name for category in obj.categories.all()]

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load widget_tweaks facet_tags %}
+{% load widget_tweaks facet_tags sorting_tags%}
 
 {% block title %}{{ model_type|default:"search result"|add:"s"|title }}{% endblock title %}
 {% block body_id %}search{% endblock body_id %}
@@ -10,12 +10,12 @@
             href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/base/jquery-ui.css">
     <link type="text/css" media="all" rel="stylesheet"
             href="{{ STATIC_URL }}selectable/css/dj.selectable.css">
+    <link rel="stylesheet" type="text/css" media="all" href="{{ STATIC_URL }}rating/jquery.rating.css">
 {% endblock extra-css %}
 
 {% block extra-js %}
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
-    <script src="{{ STATIC_URL }}selectable/js/jquery.dj.selectable.js"></script>
-    <script src="{{ STATIC_URL }}js/selectable.js"></script>
+    <script charset="utf-8" src="/static/rating/jquery.rating.pack.js"></script>
     <script>
         $('ul').each(function(){
             var ul = $(this);
@@ -114,18 +114,29 @@
     {% block content %}
         <h3>Data Catalog</h3>
         <div class="search-results">
+            <div id="results_info">
+                <div id="count">{{ page.paginator.count }} RESULTS</div>
+                <div id="sort" class="sort_nomination">
+                    <ul>
+                        <li>Sort by:</li>
+{#                        <li id="sort_rating_score">{% anchor rating_score "Rating Score" %} <span class="accent">|</span> </li>#}
+                        <li id="sort_suggested_date">{% anchor created Date %}</li>
+                    </ul>
+                </div>
+            </div>
             {% for result in page.object_list %}
                 {{result.text|safe}}
             {% if not forloop.last %}<br />{% endif %}
             {% empty %}
-            <p>No results found.</p>
+                <p>No results found.</p>
             {% endfor %}
 
             {% if page.has_previous or page.has_next %}
-            <div>
-                {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
-                |
-                {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
+            <div class="pagination">
+                <ul>
+                    {% if page.has_previous %}<li><a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">&laquo; Previous</a></li>{% else %}<li class="disabled"><span>&laquo; Previous<span><li>{% endif %}
+                    {% if page.has_next %}<li><a href="?q={{ query }}&amp;page={{ page.next_page_number }}">Next &raquo;</a></li>{% else %}<li class="disabled"><span>Next &raquo;</span></li>{% endif %}
+                </ul>
             </div>
             {% endif %}
         </div>

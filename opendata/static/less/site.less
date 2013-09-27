@@ -33,6 +33,7 @@
 @import "../bootstrap/less/close";
 @import "../bootstrap/less/component-animations";
 @import "../bootstrap/less/labels-badges";
+@import "../bootstrap/less/pagination";
 
 // Components: Buttons & Alerts
 @import "../bootstrap/less/alerts";
@@ -166,6 +167,9 @@ a {
     }
 }
 
+#comment_field_errors{
+    color: #b94a48;
+}
 .accent {
     color: @blue;
     font-size: @baseFontSize;
@@ -237,12 +241,12 @@ a {
     }
 
     .ribbonLeft {
+        position: absolute;
         .ribbon;
-
         width: auto;
         float: left;
         right: .4em;
-        top: .3em;
+        top: 80px;
 
         &:before {
             left: 0px;
@@ -282,11 +286,11 @@ a {
         display: inline-block;
         text-align: center;
 
-        > div#rating {
+        > div.rating {
             width: 100%;
-            height: 25px;
+            height: 20px;
             position: absolute;
-            top: 70%;
+            top: 80%;
             #translucent.background(@grayDark, .8);
         }
 

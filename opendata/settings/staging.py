@@ -33,3 +33,5 @@ ALLOWED_HOSTS = ('*',)
 BROKER_URL = 'amqp://opendata:%s@127.0.0.1:5672/opendata_staging' % os.environ['BROKER_PASSWORD']
 
 SITE_URL = "http//staging.open-nc.org"
+
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10

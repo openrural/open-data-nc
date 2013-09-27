@@ -119,7 +119,11 @@ def search_listing(request, model, template_name='search/search.html'):
     if model not in MODEL_FACETS.keys():
         raise Http404
     sqs = SearchQuerySet().models(model, )
-    sqs = sqs.order_by('name')
+    # import pdb; pdb.set_trace()
+    field = request.GET.get("sort", "created")
+    asc = "-" if not request.GET.get("dir") == "asc" else ""
+    ordering = "{direction}{field}".format(field=field, direction=asc)
+    sqs = sqs.order_by(ordering)
     for facet in MODEL_FACETS[model]:
         sqs = sqs.facet(facet)
     view = search_view_factory(
