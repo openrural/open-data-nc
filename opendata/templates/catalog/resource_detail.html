@@ -13,12 +13,8 @@
 <meta property="og:site_name" content="Open N.C."/>
 {% endblock %}
 
-{% block extra-css %}
-    <link rel="stylesheet" type="text/css" media="all" href="{{ STATIC_URL }}rating/jquery.rating.css">
-{% endblock %}
 
 {% block extra-js %}
-    <script charset="utf-8" src="{{ STATIC_URL }}rating/jquery.rating.pack.js"></script>
     <script charset="utf-8" src="{{ STATIC_URL }}js/comment_form.js"></script>
 {% endblock extra-js %}
 
@@ -52,15 +48,6 @@
 
   <div id="content_resource" class="tab_container gray-card">
     <div class="row-fluid">
-      <div class="span4 pull-right">
-          <div class="resource-image">
-            {% thumbnail resource.get_first_image.image "254x254" crop="center" as im %}
-                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
-            {% empty %}
-                <h1 class="no-image">No Image</h1>
-            {% endthumbnail %}
-          </div>
-      </div>
       <div class="span8">
         <!-- {% if perms.opendata.change_resource %}
             <div id="admin_link"><a href="{{SITE_ROOT}}/_admin_/opendata/resource/{{resource.id}}" target="_blank">Edit</a></div>
@@ -132,7 +119,7 @@
               <div class="info_label">Resources</div>
               <div class="info_data">
                 {% for url in resource.url_set.all %}
-                  <a href="{{url.url}}">{{url.url}}</a><br>
+                  {{url.url_label}} (<a href="{{url.url}}" title="{{ url.url }}">Download</a>)<br>
                 {% endfor %}
               </div>
               <br>
@@ -202,6 +189,16 @@
         <!-- <div class="clear_left"></div> -->
         </div> <!-- /tab_data -->
       </div> <!-- /span8 -->
+
+      <div class="span4">
+          <div class="resource-image">
+            {% thumbnail resource.get_first_image.image "254x254" crop="center" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
+            {% empty %}
+                <h1 class="no-image">No Image</h1>
+            {% endthumbnail %}
+          </div>
+      </div>
 
     </div> <!-- /row -->
     <div class="row-fluid">

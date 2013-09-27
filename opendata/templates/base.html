@@ -23,17 +23,17 @@
 
         </script>
     {% endblock %}
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/base/jquery-ui.css" type="text/css">
     <link rel="icon" type="image/x-icon" href="{{ STATIC_URL }}bootstrap/img/favicon.ico">
     <link rel="icon" type="image/png" href="{{ STATIC_URL }}bootstrap/img/favicon.png">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ STATIC_URL }}bootstrap/img/apple-touch-icon-144x144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}bootstrap/img/apple-touch-icon-114x114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}bootstrap/img/apple-touch-icon-72x72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}bootstrap/img/apple-touch-icon-precomposed.png">
-    {% compress css %}
-    {{ form.media.css }}
-    <link rel="stylesheet" href="{{ STATIC_URL }}scribbler/css/scribbler.css">
-    {% endcompress %}
+
+{#    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/base/jquery-ui.css" type="text/css">#}
+        {{ form.media.css }}
+        <link rel="stylesheet" href="{{ STATIC_URL }}scribbler/css/scribbler.css">
+        <link rel="stylesheet" type="text/less" media="all" href="{{ STATIC_URL }}rating/jquery.rating.css">
 
     {% if debug %}
         <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}less/site.less">
@@ -44,10 +44,11 @@
         {% endcompress %}
     {% endif %}
     {% block extra-css %}{% endblock %}
-    <script src="{{ STATIC_URL }}js/libs/modernizr-2.5.3.js"></script>
 
+    <script src="{{ STATIC_URL }}js/libs/modernizr-2.5.3.js"></script>
     <script data-main="{{ STATIC_URL }}scribbler/js/scribbler-min" src="{{ STATIC_URL }}scribbler/libs/require.js"></script>
 </head>
+
 <body id="{% block body_id %}{% endblock body_id %}" class="{% block body_class %}{% endblock body_class %}">
     <div class="container-fluid">
         {% block masthead %}{% endblock masthead %}
@@ -56,7 +57,6 @@
             {% include "includes/header.html" %}
         {% endblock header %}
         
-        {% block content-outer %}
         <div id="main-content">
             <div class="row-fluid">
                 {% block messages-outer %}
@@ -72,35 +72,10 @@
             
             <div class="row-fluid">
                 <div id="side_nav" class="span3">
-                    <nav>
-                        <div class="row-fluid">
-                            <div class="span12">
-                                <div id="goto_find_data">
-                                    <a href="{% url 'catalog_search' %}"><h3 class="mobile_border">Find Data</h3></a>
-                                    <p>Want to see what data we have so far? Browse our collection and filter by category or geography.</p>
-                                </div>
-                                <hr>
-                                <div id="goto_suggest_data">
-                                    <a href="{% url 'suggest-page' %}"><h3 class="mobile_border">Submit Data</h3></a>
-                                    <p>Do you have public data we don't have? Please submit a link to it here so we can add it to our collection.</p>
-                                </div>  
-                                <hr>
-                                <div id="goto_request_data">
-                                    <a href="{% url 'request-list' %}"><h3>Request Data</h3></a>
-                                    <p>Looking for something we don't have? Request the data here to see if someone else has it or is willing to find and share.</p>
-                                </div>
-                                <hr>
-                                <div id="goto_feedback" class="visible-desktop">
-                                    <a href="mailto:info@open-nc.org?subject=Feedback for open-nc.org"><h3>Feedback</h3></a>
-                                    <p>If you see something that isn't working properly or could use an improvement, let us know!</p>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
+                    {% include "includes/sidebar.html" %}
                 </div>
 
                 {% block form_mobile %}
-
                     <div class="row-fluid visible-phone">
                         <div class="span9 offset3">
                             <form class="form-search" method="get" action="{% url 'catalog_search' %}">
@@ -111,13 +86,10 @@
                             </form>
                         </div>
                     </div>
-
                 {% endblock form_mobile %}
 
                 <div class="span9">
-
                     {% block form %}
-
                         <div class="row-fluid hidden-phone">
                             <div class="span12">
                                 <form class="form-search" method="get" action="{% url 'catalog_search' %}">
@@ -128,17 +100,14 @@
                                 </form>
                             </div>
                         </div>
-
                     {% endblock form %}
-
-                    {% block catalog_search %}{% endblock %}
 
                     {% block content %}{% endblock content %}
                 </div>  <!-- /span9 -->
             </div> <!-- /row-fluid -->
+            {% block latest %} {% endblock %}
         </div> <!-- /#content -->
     </div> <!-- /container -->
-    {% endblock content-outer %}
 
     {% block footer %}
         {% include "includes/footer.html" %}
@@ -146,28 +115,18 @@
 
     {% block js %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
+{#    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>#}
+{#    <script charset="utf-8" src="{{ STATIC_URL }}js/footable.js"></script>#}
     {% compress js %}
+    <script charset="utf-8" src="{{ STATIC_URL }}bootstrap/js/bootstrap-transition.js"></script>
     <script charset="utf-8" src="{{ STATIC_URL }}bootstrap/js/bootstrap-collapse.js"></script>
     <script charset="utf-8" src="{{ STATIC_URL }}bootstrap/js/bootstrap-alert.js"></script>
-    <script charset="utf-8" src="{{ STATIC_URL }}js/footable.js"></script>
+    <script charset="utf-8" src="/static/rating/jquery.rating.pack.js"></script>
     {{ form.media.js }}
     <script charset="utf-8" src="{{ STATIC_URL }}js/site.js"></script>
     {% endcompress %}
     {% endblock js %}
     {% block extra-js %}
-    <script>
-        var x = $(window).width();
-        if( x>769 ) {
-            $('nav a').hover(function(){
-                if ($(this).next().is(':hidden')){
-                    $(this).next().slideDown(300);
-                } else {
-                    $(this).next().slideUp(300);
-                }
-            });
-        }
-    </script>
 
     {% endblock extra-js %}
 </body>

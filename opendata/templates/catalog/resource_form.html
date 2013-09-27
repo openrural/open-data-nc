@@ -7,14 +7,10 @@
 {% block body_id %}project-form{% endblock body_id %}
 
 {% block extra-css %}
-    <link rel="stylesheet" type="text/css"
-            href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/base/jquery-ui.css">
-    <link type="text/css" media="all" rel="stylesheet"
-            href="{{ STATIC_URL }}selectable/css/dj.selectable.css">
+    <link type="text/css" media="all" rel="stylesheet" href="{{ STATIC_URL }}selectable/css/dj.selectable.css">
 {% endblock extra-css %}
 
 {% block extra-js %}
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
     <script src="{{ STATIC_URL }}selectable/js/jquery.dj.selectable.js"></script>
     <script src="{{ STATIC_URL }}js/selectable.js"></script>
 {% endblock extra-js %}

@@ -13,19 +13,30 @@ $(document).ready(function(){
 
 //   $('.footable').footable();
 
-   if(!($('#user').is(':visible'))) {
-      $('#logo_text').css('left', '2%');
-   };
+    if(!($('#user').is(':visible'))) {
+        $('#logo_text').css('left', '2%');
+    };
 
-   $('nav a').each(function(){
+    $('nav a').each(function(){
       if ($(this).attr('href') == window.location.pathname){
          $(this).find('h3').css('color', '#333');
       };
-   });
+    });
 
-   var noShow = ['#login', '#logout', '#registration', '#search-requests', '#url-suggest-form', '#request-form', '#submit-form'];
+    var x = $(window).width();
+    if( x>769 ) {
+        $('nav a').hover(function(){
+            if ($(this).next().is(':hidden')){
+                $(this).next().slideDown(300);
+            } else {
+                $(this).next().slideUp(300);
+            }
+        });
+    }
 
-   for(var i=0; i<noShow.length; i++) {
+    var noShow = ['#login', '#logout', '#registration', '#search-requests', '#url-suggest-form', '#request-form', '#submit-form'];
+
+    for(var i=0; i<noShow.length; i++) {
       if($(noShow[i]).is(':visible')) {
         $('.form-search').hide();
       } else {
