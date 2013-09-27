@@ -89,6 +89,7 @@
 /*@import "../flat-ui/less/modules/login";*/
 /*@import "../flat-ui/less/spaces";*/
 
+
 /* Variables
 ==================== */
 
@@ -118,19 +119,6 @@
 
 /* Sitewide
 ==================== */
-
-@font-face {
-    font-family: 'open_sans_condensedbold';
-    src: url('../flat-ui/fonts/opensans/OpenSans-CondBold-webfont.eot');
-    src: url('../flat-ui/fonts/opensans/OpenSans-CondBold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../flat-ui/fonts/opensans/OpenSans-CondBold-webfont.woff') format('woff'),
-         url('../flat-ui/fonts/opensans/OpenSans-CondBold-webfont.ttf') format('truetype'),
-         url('../flat-ui/fonts/opensans/OpenSans-CondBold-webfont.svg') format('svg');
-    speak: none;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-}
 
 body {
     font-family: Lato, Helvetica, sans-serif;
@@ -283,6 +271,10 @@ a {
     h1, h4 {
         margin-left: 5px;
         text-align: initial;
+
+        @media (max-width: 767px) {
+            width: 65%;
+        }
     }
 
     > div.span3.resource_image {
@@ -792,7 +784,7 @@ body.registration {
     padding: 10px 0 25px 10px;
     margin-bottom: 15px;
 
-     @media (max-width: 767px) {
+     @media (max-width: 1200px) {
         h4 {
             text-align: center;
         }
@@ -800,15 +792,20 @@ body.registration {
 
     .resource-image {
         position: relative;
-        border: 2px solid @grayDark;
-        width: 250px;
-        height: 250px;
+        //border: 2px solid @grayDark;
+        //width: 250px;
+       //height: 250px;
 
         > h1.no-image {
-            font-size: 72px;
+            color: @lightgray;
+            font-size: 60px;
             line-height: 100px;
             text-align: center;
             text-transform: uppercase;
+
+            @media (min-width: 768px) and (max-width: 979px) {
+                font-size: 48px;
+            }
         }
 
         > h3.no-image {
@@ -820,22 +817,8 @@ body.registration {
         @media (max-width: 767px) {
             margin: 0 auto;
             margin-bottom: 25px;
-        }
-
-        
+        }   
     }
-
-    .ribbonRight {
-        width: 50%;
-        left: -.1em;
-
-        @media (max-width: 767px) {
-            width: 50%;
-            left: -1.9em;
-            text-align: center;
-        }
-    }
-
 }
 
 .info_label {
@@ -844,6 +827,30 @@ body.registration {
 
 .user-form {
     margin-bottom: 15px;
+}
+
+.comment_item {
+    display: inline-block;
+    margin-bottom: 25px;
+    width: 100%;
+
+    > div.comment_body {
+        float: left;
+        width: 85%;
+        padding: 0 10px;
+
+        @media (max-width: 1200px) {
+            width: 75%;
+        }
+
+        @media (max-width: 767px) {
+            width: 55%;
+        }
+    }
+
+    > div.comment_head {
+        float: left;
+    }
 }
 
 

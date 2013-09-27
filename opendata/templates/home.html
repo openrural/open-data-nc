@@ -4,7 +4,8 @@
 {% block title %}Home{% endblock %}
 
 {%block extra-js%}
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    </script>
 
 {% endblock extra-js %}
 
@@ -17,7 +18,7 @@
 	    </h3>
 	    {% for img in feature_images %}
             <div class="{% if not forloop.first %}hide{% endif %}">
-            	{% thumbnail img.image "869x450" crop="center" as im %}
+            	{% thumbnail img.image "600x400" crop="center" as im %}
                 	<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
             	{% endthumbnail %}
                 <h2 class="ribbonRight">
@@ -71,5 +72,10 @@
 		<a class="twitter-timeline" href="https://twitter.com/OpenNC" data-widget-id="373147868539805696" data-theme="light" data-link-color="#29abe2" data-chrome="noborders noheader nofooter">Tweets by @OpenNC</a>
 	</div>
 </div>
+
+
+
 {% endblock %}
+
+
 

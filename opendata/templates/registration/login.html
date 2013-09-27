@@ -14,7 +14,7 @@
 {% endblock messages %}
 
 {% block content %}
-<div id="login" class="floating-box">
+<div id="login-form" class="floating-box">
     <h1>Log in</h1>
     <form method="post" action="{% url "auth_login" %}">
         {% csrf_token %}

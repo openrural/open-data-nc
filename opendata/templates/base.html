@@ -124,10 +124,30 @@
     <script charset="utf-8" src="/static/rating/jquery.rating.pack.js"></script>
     {{ form.media.js }}
     <script charset="utf-8" src="{{ STATIC_URL }}js/site.js"></script>
+    <script>
+
+        // shows/hides description of nav options
+        var x = $(window).width();
+        if( x > 769 ) {
+            $('nav a').hover(function(){
+                if ($(this).next('p').is(':hidden')){
+                    $(this).next('p').slideDown(300);
+                } else {
+                    $(this).next('p').slideUp(300);
+                }
+            })
+        };
+    </script>
+    {% endcompress %}
+    {% endblock js %}
+        
     {% endcompress %}
     {% endblock js %}
     {% block extra-js %}
+>>>>>>> master
 
     {% endblock extra-js %}
+
+
 </body>
 </html>
