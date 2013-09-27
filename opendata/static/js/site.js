@@ -11,27 +11,27 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 
 $(document).ready(function(){
 
-//   $('.footable').footable();
+  $('.footable').footable(); //plugin for home page table to collapse on mobile
 
-   if(!($('#user').is(':visible'))) {
-      $('#logo_text').css('left', '2%');
-   };
+  if(!($('#user').is(':visible'))) {
+    $('#logo_text').css('left', '2%');
+  };
 
-   $('nav a').each(function(){
-      if ($(this).attr('href') == window.location.pathname){
-         $(this).find('h3').css('color', '#333');
-      };
-   });
-
-   var noShow = ['#login-form', '#logout', '#registration', '#search-requests', '#url-suggest-form', '#request-form', '#submit-form'];
-
-   for(var i=0; i<noShow.length; i++) {
-      if($(noShow[i]).is(':visible')) {
-        $('.form-search').hide();
-      } else {
-        return false;
-      } 
+  $('nav a').each(function(){
+    if ($(this).attr('href') == window.location.pathname){
+       $(this).find('h3').css('color', '#333');
     };
+  });
+
+  var noShow = ['#login-form', '#logout', '#registration', '#search-requests', '#url-suggest-form', '#request-form', '#submit-form'];
+
+  for(var i=0; i<noShow.length; i++) {
+    if($(noShow[i]).is(':visible')) {
+      $('.form-search').hide();
+    } else {
+      return false;
+    } 
+  };
 });
 
 //displays logo text on scroll in mobile
@@ -39,10 +39,10 @@ $(window).scroll(function(){
    var h = $('#logo').height();
    var x = $(window).width();
    var y = $(window).scrollTop();
-   if( y > (h+50) && x < 767 ){
-      $('#logo_text').fadeIn('slow');
+   if( y > (h+50) && x < 768 ){
+      $('#logo_mobile').fadeIn('slow');
    } else {
-      $('#logo_text').fadeOut('slow');
+      $('#logo_mobile').fadeOut('slow');
    }
 });
 

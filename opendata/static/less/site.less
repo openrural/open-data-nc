@@ -791,16 +791,20 @@ body.registration {
 
     .resource-image {
         position: relative;
-        border: 2px solid @grayDark;
-        width: 250px;
-        height: 250px;
+        //border: 2px solid @grayDark;
+        //width: 250px;
+       //height: 250px;
 
         > h1.no-image {
             color: @lightgray;
-            font-size: 72px;
+            font-size: 60px;
             line-height: 100px;
             text-align: center;
             text-transform: uppercase;
+
+            @media (min-width: 768px) and (max-width: 979px) {
+                font-size: 48px;
+            }
         }
 
         > h3.no-image {
@@ -809,7 +813,7 @@ body.registration {
             text-transform: uppercase;
         }
 
-        @media (max-width: 1200px) {
+        @media (max-width: 767px) {
             margin: 0 auto;
             margin-bottom: 25px;
         }   
