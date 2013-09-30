@@ -4,7 +4,15 @@
 {% block title %}Home{% endblock %}
 
 {%block extra-js%}
+	
+	<script charset="utf-8" src="{{ STATIC_URL }}js/footable.js"></script>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+	<script>
+	$(document).ready(function(){
+		$('.footable').footable(); //plugin to make home page table collapse on mobile
+	});
+	</script>
 
 {% endblock extra-js %}
 

@@ -4,8 +4,8 @@
 		<div id="header_text" class="span5">
 			<p>Welcome to the marketplace of data on the public record. Feel free to browse, share and contribute to our collection.</p>
 		</div>
-		<div id="login" class="span3"> 
-			<a href="{% url "home" %}"><h5 class="logo_text">Open <span class="accent">N.C.</span></h5></a>
+		<div id="login-header" class="span3"> 
+			<a href="{% url "home" %}"><h5 id="logo_mobile" class="logo_text">Open <span class="accent">N.C.</span></h5></a>
 			{% if not user.is_authenticated %}
 				<a id="about" href="{% url 'about' %}">About Us</a>
 				<span class="accent"> | </span>
@@ -20,6 +20,7 @@
                     <span class="accent hidden-phone"> | </span>
                 {% else %}
                     <a id="about" href="{% url 'about' %}">About Us</a>
+                    <span class="accent"> | </span>
                 {% endif %}
 				<a href="{% url "auth_logout" %}">Log Out</a>
 			{% endif %}

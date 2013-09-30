@@ -48,6 +48,15 @@
 
   <div id="content_resource" class="tab_container gray-card">
     <div class="row-fluid">
+      <div class="span4 pull-right">
+          <div class="resource-image">
+            {% thumbnail resource.get_first_image.image "254x254" crop="center" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
+            {% empty %}
+                <h1 class="no-image hidden-phone">No Image</h1>
+            {% endthumbnail %}
+          </div>
+      </div>
       <div class="span8">
         <!-- {% if perms.opendata.change_resource %}
             <div id="admin_link"><a href="{{SITE_ROOT}}/_admin_/opendata/resource/{{resource.id}}" target="_blank">Edit</a></div>
@@ -185,21 +194,20 @@
             <br>
             <div class="info_label">Last Update</div>
             <div class="info_data">{{resource.last_updated}}</div>
+            <br>
+            <div id="avg_rating" class="info_label">Average Rating</div>
+            <div id="detail_rating">
+              <span>{{resource.rating_votes|default:"0"}} Votes</span>
+              <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 1 %}checked{% endif %}/>
+              <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 2 %}checked{% endif %}/>
+              <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 3 %}checked{% endif %}/>
+              <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 4 %}checked{% endif %}/>
+              <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 5 %}checked{% endif %}/>
+            </div>
           </div>
         <!-- <div class="clear_left"></div> -->
         </div> <!-- /tab_data -->
       </div> <!-- /span8 -->
-
-      <div class="span4">
-          <div class="resource-image">
-            {% thumbnail resource.get_first_image.image "254x254" crop="center" as im %}
-                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
-            {% empty %}
-                <h1 class="no-image">No Image</h1>
-            {% endthumbnail %}
-          </div>
-      </div>
-
     </div> <!-- /row -->
     <div class="row-fluid">
       <div class="span4 pull-right">
@@ -277,17 +285,7 @@
 
   <div class="tab_container" id="content_ratings">
     <div class="tab_body" id="ratings-tab">
-      <div id="social_meta">
-        <h3 id="avg_rating">Average Rating</h3>
-        <div id="detail_rating">
-          <span>{{resource.rating_votes|default:"0"}} Votes</span>
-          <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 1 %}checked{% endif %}/>
-          <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 2 %}checked{% endif %}/>
-          <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 3 %}checked{% endif %}/>
-          <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 4 %}checked{% endif %}/>
-          <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 5 %}checked{% endif %}/>
-        </div>
-      </div>
+      <h3>Comments</h3>
       <div id="comment_form">
         <div>
           {% if user.is_authenticated %}
@@ -316,6 +314,7 @@
               {% endif %}
               {% endfor %}
               <div class="clear"></div>
+              <br><br>
               <div class="submit">
                 <input type="submit" name="post" class="btn" value="Post" />
               </div>
@@ -325,13 +324,14 @@
           {% endif %}
         </div>
       </div>
-      <div id="comment_list">
-        <div id="comment_header">Comments</div>
-
+      
+      <h4 id="comment_header">Recent Comments</h4>
+      <div id="comment_list" class="gray-card">
         {% get_comment_list for resource as comment_list %}
         {% for comment in comment_list %}
           <div class="comment_item">
             <div class="comment_head">
+              <div class="comment_user">{{ comment.user.username }}</div>
               <div class="comment_rating">
                 <input name="star_{{comment.id}}" type="radio" class="star star_{{comment.id}}" disabled="disabled" {% if comment.rating == 1 %}checked{% endif %}/>
                 <input name="star_{{comment.id}}" type="radio" class="star star_{{comment.id}}" disabled="disabled" {% if comment.rating == 2 %}checked{% endif %}/>
@@ -339,7 +339,6 @@
                 <input name="star_{{comment.id}}" type="radio" class="star star_{{comment.id}}" disabled="disabled" {% if comment.rating == 4 %}checked{% endif %}/>
                 <input name="star_{{comment.id}}" type="radio" class="star star_{{comment.id}}" disabled="disabled" {% if comment.rating == 5 %}checked{% endif %}/>
               </div>
-              <div class="comment_user">{{ comment.user.username }}</div>
               <div class="comment_date">{{ comment.submit_date|date:"m/d/Y"}}</div>
             </div>
             <div class="comment_body">

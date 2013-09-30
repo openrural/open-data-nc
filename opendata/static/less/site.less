@@ -119,19 +119,6 @@
 /* Sitewide
 ==================== */
 
-@font-face {
-    font-family: 'open_sans_condensedbold';
-    src: url('../flat-ui/fonts/opensans/OpenSans-CondBold-webfont.eot');
-    src: url('../flat-ui/fonts/opensans/OpenSans-CondBold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../flat-ui/fonts/opensans/OpenSans-CondBold-webfont.woff') format('woff'),
-         url('../flat-ui/fonts/opensans/OpenSans-CondBold-webfont.ttf') format('truetype'),
-         url('../flat-ui/fonts/opensans/OpenSans-CondBold-webfont.svg') format('svg');
-    speak: none;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-}
-
 body {
     font-family: Lato, Helvetica, sans-serif;
     margin: 0;
@@ -331,7 +318,7 @@ header {
         }
     }
 
-    #login {
+    #login-header {
         text-align: right;
 
         h5 {
@@ -788,7 +775,7 @@ body.registration {
 /****** Resource Detail ******/
 
 #content_resource {
-//    word-break: break-all;
+//  word-break: break-all;
     padding: 10px 0 25px 10px;
     margin-bottom: 15px;
 
@@ -800,15 +787,20 @@ body.registration {
 
     .resource-image {
         position: relative;
-        border: 2px solid @grayDark;
-        width: 250px;
-        height: 250px;
+        //border: 2px solid @grayDark;
+        //width: 250px;
+        //height: 250px;
 
         > h1.no-image {
-            font-size: 72px;
+            color: @lightgray;
+            font-size: 60px;
             line-height: 100px;
             text-align: center;
             text-transform: uppercase;
+
+            @media (min-width: 768px) and (max-width: 979px) {
+                font-size: 48px;
+            }
         }
 
         > h3.no-image {
@@ -820,22 +812,29 @@ body.registration {
         @media (max-width: 767px) {
             margin: 0 auto;
             margin-bottom: 25px;
-        }
-
-        
+        }   
     }
+}
 
-    .ribbonRight {
-        width: 50%;
-        left: -.1em;
+.comment_item {
+    margin-bottom: 25px;
+}
 
-        @media (max-width: 767px) {
-            width: 50%;
-            left: -1.9em;
-            text-align: center;
-        }
+.comment_head {
+    display: inline-block; 
+    border-right: 1px solid @blue; 
+    margin-right: 15px; 
+    padding-right: 15px;
+}
+
+.comment_body {
+    display: inline-block; 
+    vertical-align: top; 
+    width: 75%; 
+
+    @media (max-width: 767px) {
+        width: 60%;
     }
-
 }
 
 .info_label {
