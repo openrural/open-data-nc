@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load widget_tweaks scribbler_tags %}
+
+{% block title %}Register{% endblock title %}
+{% block body_id %}registration_form{% endblock body_id %}
+{% block body_class %}registration{% endblock %}
+
+{% block content %}
+<div class="">
+    {% scribble "about-page" %}
+    <h2>Your account is now verified!</h2>
+
+    <div class="well">
+        <div class="alert">
+            You can now <a href="{% url 'auth_login' %}">login</a>.
+        </div>
+    </div>
+    {% endscribble %}
+</div>
+{% endblock content %}

@@ -75,21 +75,19 @@
                     {% include "includes/sidebar.html" %}
                 </div>
 
-                {% block form_mobile %}
-                    <div class="row-fluid visible-phone">
-                        <div class="span9 offset3">
-                            <form class="form-search" method="get" action="{% url 'catalog_search' %}">
-                                <div class="control-group input-append">
-                                    <input id="id_q" name="q" placeholder="Search the data catalog..." type="text">
-                                    <button class="btn"><i class="icon-search icon-white"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                {% endblock form_mobile %}
-
                 <div class="span9">
-                    {% block form %}
+                    {% block search_form %}
+                      <div class="searchForm">
+                        <div class="row-fluid visible-phone">
+                            <div class="span9 offset3">
+                                <form class="form-search" method="get" action="{% url 'catalog_search' %}">
+                                    <div class="control-group input-append">
+                                        <input id="id_q" name="q" placeholder="Search the data catalog..." type="text">
+                                        <button class="btn"><i class="icon-search icon-white"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                         <div class="row-fluid hidden-phone">
                             <div class="span12">
                                 <form class="form-search" method="get" action="{% url 'catalog_search' %}">
@@ -100,7 +98,8 @@
                                 </form>
                             </div>
                         </div>
-                    {% endblock form %}
+                      </div>
+                    {% endblock search_form %}
 
                     {% block content %}{% endblock content %}
                 </div>  <!-- /span9 -->

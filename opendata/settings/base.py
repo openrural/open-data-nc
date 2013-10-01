@@ -142,6 +142,7 @@ INSTALLED_APPS = (
     # External apps
     'south',
     'compressor',
+    'captcha',
     'scribbler',
     'widget_tweaks',
     'haystack',
@@ -150,6 +151,7 @@ INSTALLED_APPS = (
     'djangoratings',
     'pagination',
     'django_sorting',
+    'registration',
     'sorl.thumbnail',
 )
 
@@ -218,6 +220,15 @@ HAYSTACK_SEARCH_RESULTS_PER_PAGE = 5
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
+# Email Settings
+EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
+EMAIL_HOST_USER = 'AKIAJUGGH5WDBAHLSMDA'
+EMAIL_HOST_PASSWORD = 'Aqi/EYC1Tfv00aoCWMYHQV19ujuRggJZEyr4Ah36Iwd8'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = "Open NC <info@open-nc.org>"
+
 # DATEFORMAT
 DATE_INPUT_FORMATS = (
     '%m/%d/%Y', '%m/%d/%y', '%Y-%m-%d', # '2006-10-25', '10/25/2006', '10/25/06'
@@ -226,3 +237,7 @@ DATE_INPUT_FORMATS = (
     # '%B %d %Y', '%B %d, %Y',            # 'October 25 2006', 'October 25, 2006'
     # '%d %B %Y', '%d %B, %Y',            # '25 October 2006', '25 October, 2006'
 )
+
+RECAPTCHA_PUBLIC_KEY = '6LcxOOgSAAAAAL_PmCWgtT2no9PRTOzEeL077ITC'
+RECAPTCHA_PRIVATE_KEY = '6LcxOOgSAAAAAAmBOegVZdcDORDoFQxsDsC94of8'
+RECAPTCHA_USE_SSL = True

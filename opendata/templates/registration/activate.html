@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load widget_tweaks scribbler_tags %}
+
+{% block title %}Register{% endblock title %}
+{% block body_id %}registration_form{% endblock body_id %}
+{% block body_class %}registration{% endblock %}
+
+{% block content %}
+<div class="">
+    {% scribble "about-page" %}
+        Used if account activation fails. With the default setup, has the following context:
+
+        activation_key
+        The activation key used during the activation attempt.
+    {% endscribble %}
+</div>
+{% endblock content %}

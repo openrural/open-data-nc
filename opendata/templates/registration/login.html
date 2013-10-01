@@ -18,7 +18,7 @@
     <h1>Log in</h1>
     <form method="post" action="{% url "auth_login" %}">
         {% csrf_token %}
-        <input type="hidden" name="next" value="{{ next }}" />
+        <input type="hidden" name="next" value="{{ request.META.HTTP_REFERER }}" />
         <div class="control-group{% if form.username.errors %} error{% endif %}">
             {{ form.username|attr:"placeholder:Username" }}
         </div>
