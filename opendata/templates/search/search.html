@@ -23,7 +23,12 @@
             $('ul').not($(this).parent('ul')).each(function(){
                   $(this).children('li:gt(4)').hide();
             });
-            $(this).text($(this).text() == "Show Less" ? "Show More..." : "Show Fewer");
+
+            if ($(this).text() == "Show Less..."){
+                $(this).html("Show More...");
+            } else {
+                $(this).html("Show Less...");
+            }
         });
     </script>
 {% endblock extra-js %}
@@ -86,9 +91,15 @@
                             {% with path=request.get_full_path %}
                                 <li>
                                    {% if not facet.0 in filters %}
-                                    <a href="{{ request.get_full_path }}{% if '?q=' not in path %}?q={% endif %}&amp;selected_facets={{ field }}_exact:{{ facet.0|urlencode }}">
-                                        {{ facet.0|title }} ({{ facet.1 }})
-                                    </a>
+                                       {% if request.GET %}
+                                            <a href="{{ request.get_full_path }}&amp;selected_facets={{ field }}_exact:{{ facet.0|urlencode }}">
+                                                {{ facet.0|title }} ({{ facet.1 }})
+                                            </a>
+                                       {% else %}
+                                            <a href="{{ request.get_full_path }}?selected_facets={{ field }}_exact:{{ facet.0|urlencode }}">
+                                                {{ facet.0|title }} ({{ facet.1 }})
+                                            </a>
+                                       {% endif %}
                                     {% else %}
                                        <span class="muted" title="Filter already applied">{{ facet.0|title }} ({{ facet.1 }})</span>
                                     {% endif %}
@@ -123,7 +134,7 @@
             {% if page.has_previous or page.has_next %}
             <div class="pagination">
                 <ul>
-                    {% if page.has_previous %}<li><a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">&laquo; Previous</a></li>{% else %}<li class="disabled"><span>&laquo; Previous<span><li>{% endif %}
+                    {% if page.has_previous %}<li><a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">&laquo; Previous</a></li>{% else %}<li class="disabled"><span>&laquo; Previous</span></li>{% endif %}
                     {% if page.has_next %}<li><a href="?q={{ query }}&amp;page={{ page.next_page_number }}">Next &raquo;</a></li>{% else %}<li class="disabled"><span>Next &raquo;</span></li>{% endif %}
                 </ul>
             </div>

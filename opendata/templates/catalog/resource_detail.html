@@ -58,55 +58,11 @@
           </div>
       </div>
       <div class="span8">
-        <!-- {% if perms.opendata.change_resource %}
-            <div id="admin_link"><a href="{{SITE_ROOT}}/_admin_/opendata/resource/{{resource.id}}" target="_blank">Edit</a></div>
-        {% endif %} -->
-        <!-- <ul class="tab_header">
-          <li class="tab_button"><a href="#tab_basic_info" onclick="odp.trackEvent('Resource Data', 'View Basic Info', 'Resource', {{resource.id}});return false;">BASIC INFO</a></li>
-          <li class="tab_button"><a href="#tab_extra_info" onclick="odp.trackEvent('Resource Data', 'View All Info', 'Resource', {{resource.id}});return false;">ALL INFO</a></li>
-        </ul>
-        <div class="tab_body" id="tab_basic_info">
-
-          <div id="tab_data">
-            {% if resource.organization %}
-            <div class="info_label">Organization: <span class="info_data"><a href="{{SITE_ROOT}}/opendata/search/?qs={{resource.organization}}" onclick="odp.trackEvent('Search Link', 'Resource Organization', 'Resource', {{resource.id}})">{{resource.organization}}</a></span></div>
-            {% endif %}
-            {% if resource.division %}
-            <div class="info_label">Division: <span class="info_data"><a href="{{SITE_ROOT}}/opendata/search/?qs={{resource.division}}" onclick="odp.trackEvent('Search Link', 'Resource Organization', 'Resource', {{resource.id}})">{{resource.division}}</a></span></div>
-            {% endif %}
-            {% if resource.release_date %}
-            <div class="info_label">Release Date: <span class="info_data">{{resource.release_date}}</a></span></div>
-            {% endif %}
-            {% if resource.time_period %}
-            <div class="info_label">Valid Time PeriodL <span class="info_data">{{resource.time_period}}</span></div>
-            {% endif %}
-            {% if resource.data_types.all.count > 0 %}
-            <div class="info_label">Data Types:
-              <span class="info_data">
-              	{% for dt in resource.data_types.all %}
-      		    	 {{dt}}{% if not forloop.last %}, {% endif %}
-              	{% endfor %}
-              </span>
-            </div>
-            {% endif %}
-            <div class="info_label">Categories:
-            <span class="info_data">
-              {% for tag in resource.tags.all %}
-                <a href="{{SITE_ROOT}}/opendata/tag/{{tag.id}}/?sort=name&dir=asc" onclick="odp.trackEvent('Search Link', 'Resource Tag', 'Tag', '{{tag}}')">{{tag}}</a>{% if not forloop.last %}, {% endif %}
-              {% endfor %}
-              </span>
-            </div>
-
-      </div>
-      <div class="clear"></div>
-    </div> -->
-    
-
         <div class="tab_body" id="tab_extra_info">
-          <div id="tab_data">
-            {% if resource.organization %}
-              <div class="info_label">Organization</div>
-              <div class="info_data"><a href="{{SITE_ROOT}}/opendata/search/?qs={{resource.organization}}" onclick="odp.trackEvent('Search Link', 'Resource Organization', 'Resource', {{resource.id}})">{{resource.organization}}</a></div>
+          <div>
+            {% if resource.department %}
+              <div class="info_label">Department</div>
+              <div class="info_data"><a href="{{SITE_ROOT}}/opendata/search/?qs={{resource.organization}}" onclick="odp.trackEvent('Search Link', 'Resource Organization', 'Resource', {{resource.id}})">{{resource.department}}</a></div>
               <br>
             {% endif %}
             {% if resource.division %}
@@ -197,7 +153,7 @@
             <br>
             <div id="avg_rating" class="info_label">Average Rating</div>
             <div id="detail_rating">
-              <span>{{resource.rating_votes|default:"0"}} Votes</span>
+              <span>{{resource.rating_votes|default:0}} Vote{{resource.rating_votes|pluralize}}</span>
               <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 1 %}checked{% endif %}/>
               <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 2 %}checked{% endif %}/>
               <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 3 %}checked{% endif %}/>
@@ -205,7 +161,6 @@
               <input name="star_resource" type="radio" class="star star_resource" disabled="disabled" {% if average_rating == 5 %}checked{% endif %}/>
             </div>
           </div>
-        <!-- <div class="clear_left"></div> -->
         </div> <!-- /tab_data -->
       </div> <!-- /span8 -->
     </div> <!-- /row -->

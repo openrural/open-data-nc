@@ -9,7 +9,7 @@ from opendata.requests.models import Request
 from .forms import FacetedSearchListingForm
 
 MODEL_FACETS = {
-    Resource: ('data_types', 'categories', 'cities', 'counties'),
+    Resource: ('type', 'categories', 'cities', 'counties'),
     Request: (),
 }
 

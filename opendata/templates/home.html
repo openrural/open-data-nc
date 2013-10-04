@@ -67,7 +67,7 @@
 							<td>{{ r.last_updated|date:"m/d/y" }}</td>
 							<td>{{ r.counties.all.0.name }}</td>
 							<td>{{ r.url_types.all.0.name }}</td>
-							<td>{{ r.data_types.all.0.name|lower|capfirst }}</td>
+							<td>{{ r.url_set.all.0.url_type }}</td>
 						</tr>
 					{% endfor %}
 				</tbody>

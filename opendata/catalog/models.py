@@ -193,7 +193,7 @@ class Resource(models.Model):
                                         editable=False)
 
     class Meta:
-        ordering = ("-created", )
+        ordering = ("-last_updated", )
     
     def get_distinct_url_types(self):
         types = []

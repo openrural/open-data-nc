@@ -16,10 +16,8 @@
 {% block content %}
 <h1>Share Public Data</h1>
 
-
-    {% scribble "share-page-1" %}
-
 <div class="gray-card">
+    {% scribble "share-page-1" %}
 	<p>We realize that we haven't listed every North Carolina-based government data
 	 set in the Open N.C. catalog. If you have a specific data set that you've found
 	 and would like to share, let us know by completing and submitting the form
@@ -45,7 +43,11 @@
 	the acquisition and publication processes aren't transparent will not be
 	included in the catalog.
 	</p>
-    
+    {% endscribble %}
+</div>
+<div>
+	<br>
+	{% scribble "share-page-2" %}
 	<p>
 	Ideally, the data you want to share is already public on a government website.
 	If it is, please post here the URL that points directly to the dataset.
@@ -64,11 +66,10 @@
     
 </div>
 
-{% scribble "share-page-2" %}
+{% scribble "share-page-3" %}
 <h2>Tools for Sharing Public Data</h2>
 
 <br>
-
 <div class="sharing_tools">
 	<div class="row-fluid">
 		<h3 class="span2"><a href="http://opendata.socrata.com">Socrata</a></h3>

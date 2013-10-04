@@ -7,7 +7,7 @@ class ResourceIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.NgramField(document=True, use_template=True)
     name = indexes.CharField(model_attr='name')
     created = indexes.DateTimeField(model_attr="created")
-    data_types = indexes.MultiValueField(faceted=True)
+    type = indexes.MultiValueField(faceted=True)
     score = indexes.DecimalField(model_attr="rating")
     categories = indexes.MultiValueField(faceted=True)
     cities = indexes.MultiValueField(faceted=True)
@@ -31,5 +31,5 @@ class ResourceIndex(indexes.SearchIndex, indexes.Indexable):
     def prepare_counties(self, obj):
         return [county.name for county in obj.counties.all()]
 
-    def prepare_data_types(self, obj):
-        return [type_.name for type_ in obj.data_types.all()]
+    def prepare_type(self, obj):
+        return [url.url_type for url in obj.url_set.all()]
