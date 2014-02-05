@@ -22,15 +22,6 @@ $(document).ready(function(){
     });
 
     var x = $(window).width();
-    if( x>769 ) {
-        $('nav a').hover(function(){
-            if ($(this).next('p').is(':hidden')){
-                $(this).next('p').slideDown(300);
-            } else {
-                $(this).next('p').slideUp(300);
-            }
-        });
-    }
 
     var noShow = ['#login', '#logout', '#registration', '#search-requests', '#url-suggest-form', '#request-form', '#submit-form'];
 

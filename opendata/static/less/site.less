@@ -353,44 +353,17 @@ header {
 
 nav {
     margin-top: 65px;
-
-    h3 {
-        display: inline;
+    h3{
+      line-height: 30px;
     }
 
-    p {
-        .hide;
-        margin: 0;
-        width: 75%;
-    }
-
-    a {
-        color: @grayDark;
+    p{
+      margin-top: 10px;
     }
 
     @media (max-width: 767px) {
-
-        text-align: center;
-        margin-top: 25px;
-
-        div[id^="goto"] {
-            display: inline;
-        }
-
         h3 {
-            color: @openGrayDark;
-            display: inline;
-            border: none;
-            font-size: 1.15em;
-            padding: 0 5px;
-
-            &.mobile_border {
-                border-right: 2px solid @blue;
-            }
-        }    
-
-        hr, .accent {
-            .hidden;
+          margin-bottom: 25px;
         }
     }
 }
