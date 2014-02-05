@@ -11,7 +11,7 @@ before_install:
  - sudo apt-get install libgeos-dev
 
 install:
- - pip install -r requirements/dev.txt --use-mirrors
+ - pip install -r requirements/production.txt --use-mirrors
 
 before_script:
  - psql -c "CREATE DATABASE opendata;" -U postgres
